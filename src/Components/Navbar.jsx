@@ -1,8 +1,21 @@
-import React from "react";
+import React, { use } from "react";
 import { LuUserPlus } from "react-icons/lu";
 import { NavLink } from "react-router";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const Navbar = () => {
+  const { user, signOutUser } = use(AuthContext);
+
+  const handleLogOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log("sign Out Successfully");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const linksNav = (
     <>
       <li>
@@ -12,12 +25,16 @@ const Navbar = () => {
       <li>
         <NavLink>All Plant</NavLink>
       </li>
-      <li>
-        <NavLink to="addplants">Add Plant</NavLink>
-      </li>
-      <li>
-        <NavLink>My Plant</NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink to="/addplants">Add Plants</NavLink>
+          </li>
+          <li>
+            <NavLink>My Plant</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
@@ -41,8 +58,22 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{linksNav}</ul>
         </div>
         <div className="navbar-end gap-2">
-          <LuUserPlus size={25} />
-          <NavLink>Register</NavLink>
+          {user ? (
+            <div>
+              <button onClick={handleLogOut} className="btn btn-primary">
+                LogOut
+              </button>
+            </div>
+          ) : (
+            <div>
+              <NavLink className="btn btn-primary" to="/login">
+                Login
+              </NavLink>{" "}
+              <NavLink className="btn btn-primary" to="/register">
+                Register
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </div>

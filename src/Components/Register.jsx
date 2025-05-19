@@ -10,8 +10,15 @@ const Register = () => {
     const form = e.target;
     const formData = new FormData(form);
     const newUser = Object.fromEntries(formData.entries());
-    const { email } = newUser;
+    const { email, password } = newUser;
     console.log(email);
+    signUpUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
   return (
     <div>

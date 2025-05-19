@@ -10,6 +10,7 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AddPlants from "./Pages/AddPlants.jsx";
 import AuthProvider from "./Contexts/AuthProvider.jsx";
+import PrivateRoute from "./Routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addplants",
-        Component: AddPlants,
+        element: (
+          <PrivateRoute>
+            <AddPlants></AddPlants>
+          </PrivateRoute>
+        ),
       },
     ],
   },
