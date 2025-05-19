@@ -1,10 +1,17 @@
-import React from "react";
+import React, { use } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const Register = () => {
+  const { signUpUser } = use(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const newUser = Object.fromEntries(formData.entries());
+    const { email } = newUser;
+    console.log(email);
   };
   return (
     <div>
