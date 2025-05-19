@@ -13,7 +13,7 @@ const Navbar = () => {
         <NavLink>All Plant</NavLink>
       </li>
       <li>
-        <NavLink>Add Plant</NavLink>
+        <NavLink to="addplants">Add Plant</NavLink>
       </li>
       <li>
         <NavLink>My Plant</NavLink>

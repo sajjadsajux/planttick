@@ -8,6 +8,7 @@ import MainLayout from "./Layouts/MainLayout.jsx";
 import Home from "./Pages/Home.jsx";
 import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
+import AddPlants from "./Pages/AddPlants.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/addplants",
+        Component: AddPlants,
       },
     ],
   },

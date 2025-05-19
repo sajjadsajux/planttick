@@ -30,8 +30,8 @@ const HomeSlider = () => {
           <div className="relative">
             <img src="https://i.ibb.co/XrtvGJFs/slider-Nouka.jpg" className="lg:h-[85vh] md:h-[70vh] w-full" alt="" />
             <div className="absolute inset-0  bg-opacity-40 flex flex-col items-center justify-center px-4 text-center text-white">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2">Welcome to the Event</h2>
-              <p className="text-base md:text-lg lg:text-xl">Join us for unforgettable moments</p>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2">Don’t Forget to Water Again</h2>
+              <p className="text-base md:text-lg lg:text-xl">Keep track of watering, sunlight, and plant food. Take care of your plants without stress.</p>
             </div>
           </div>
         </SwiperSlide>
@@ -39,8 +39,8 @@ const HomeSlider = () => {
           <div className="relative">
             <img src="https://i.ibb.co/Q7zkkwmH/conf.jpg" alt="" className="lg:h-[85vh] md:h-[70vh] w-full" />
             <div className="absolute inset-0  bg-opacity-40 flex flex-col items-center justify-center px-4 text-center text-white">
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2">Welcome to the Event</h2>
-              <p className="text-base md:text-lg lg:text-xl">Join us for unforgettable moments</p>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2">Learn How to Care for Your Plants</h2>
+              <p className="text-base md:text-lg lg:text-xl">Get simple care tips for each type of plant — like succulents, ferns, or flowers</p>
             </div>
           </div>
         </SwiperSlide>
@@ -48,8 +48,8 @@ const HomeSlider = () => {
           <div>
             <img src="https://i.ibb.co/TqTcXbSc/fanush.jpg" alt="" className="lg:h-[85vh] md:h-[70vh] w-full" />
             <div className="absolute inset-0  bg-opacity-40 flex flex-col items-center justify-center px-4 text-center text-white">
-              <h2 className="text-xl md:text-3xl lg:text-5xl font-bold mb-2">Welcome to the Event</h2>
-              <p className="text-base md:text-lg lg:text-xl">Join us for unforgettable moments</p>
+              <h2 className="text-xl md:text-3xl lg:text-5xl font-bold mb-2">See and Manage Your Plants Easily</h2>
+              <p className="text-base md:text-lg lg:text-xl">Add your plants, check their health, and update their care — all from one screen.</p>
             </div>
           </div>
         </SwiperSlide>
