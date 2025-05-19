@@ -15,13 +15,13 @@ const AddPlants = () => {
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleAddPlants}>
           {/* Image */}
           <div className="space-y-1 text-sm">
-            <label className="block text-gray-400">Image</label>
+            <label className="block ">Image</label>
             <input required type="url" name="image" placeholder="ImageURL" className="w-full px-4 py-3 rounded-md   outline-1" />
           </div>
 
           {/* Plant Name */}
           <div className="space-y-1 text-sm">
-            <label className="block text-gray-400">Plant Name</label>
+            <label className="block ">Plant Name</label>
             <input required type="text" name="plantname" placeholder="Plant Name" className="w-full px-4 py-3 rounded-md outline-1" />
           </div>
 
@@ -93,25 +93,25 @@ const AddPlants = () => {
 
           {/* Description - Full Width */}
           <div className="space-y-1 text-sm md:col-span-2">
-            <label className="block text-gray-400">Description</label>
+            <label className="block ">Description</label>
             <input required type="text" name="description" placeholder="Description" className="w-full px-4 py-3 rounded-md border-gray-700  outline-1 " />
           </div>
 
           {/* User Email */}
           <div className="space-y-1 text-sm">
-            <label className="block text-gray-400">User Email</label>
-            <input required type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md   " />
+            <label className="block ">User Email</label>
+            <input required type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md  outline-1 " />
           </div>
 
           {/* User Name */}
           <div className="space-y-1 text-sm">
-            <label className="block text-gray-400">User Name</label>
-            <input required type="text" name="name" placeholder="User Name" className="w-full px-4 py-3 rounded-md  " />
+            <label className="block ">User Name</label>
+            <input required type="text" name="name" placeholder="User Name" className="w-full px-4 py-3 rounded-md  outline-1" />
           </div>
 
           {/* Submit Button - Full Width */}
           <div className="md:col-span-2">
-            <button type="submit" className="block w-full p-3 text-center rounded-sm text-white bg-green-700">
+            <button type="submit" className="block w-full p-3 text-center rounded-sm text-white bg-primary">
               Register
             </button>
           </div>
