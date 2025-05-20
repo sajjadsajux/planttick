@@ -11,6 +11,7 @@ import Register from "./Components/Register.jsx";
 import AddPlants from "./Pages/AddPlants.jsx";
 import AuthProvider from "./Contexts/AuthProvider.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
+import AllPlants from "./Pages/AllPlants.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/allplants",
+        loader: () => fetch("http://localhost:3000/plants"),
+        Component: AllPlants,
       },
       {
         path: "/addplants",

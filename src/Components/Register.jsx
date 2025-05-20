@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { signUpUser, setUser, updateUser } = use(AuthContext);
@@ -20,6 +21,14 @@ const Register = () => {
         updateUser({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photo });
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Registration completed and redirecting to the home",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+
             navigate("/");
           })
           .catch((error) => {

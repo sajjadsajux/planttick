@@ -1,12 +1,36 @@
-import React from "react";
+import React, { use } from "react";
+import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const AddPlants = () => {
+  const { user } = use(AuthContext);
   const handleAddPlants = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const newPlantData = Object.fromEntries(formData.entries());
     console.log(newPlantData);
+    // send to database
+    fetch("http://localhost:3000/plants", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newPlantData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Plant Added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          form.reset();
+        }
+      });
   };
   return (
     <div className="bg-green-700 p-10">
@@ -32,12 +56,12 @@ const AddPlants = () => {
             </label>
             <select required name="category" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm ">
               <option value="">Select a category from below</option>
-              <option value="succulent">Succulent</option>
-              <option value="fern">Fern</option>
-              <option value="flowering">Flowering</option>
-              <option value="tropical">Tropical</option>
-              <option value="bonsai">Bonsai</option>
-              <option value="cactus">Cactus</option>
+              <option value="Succulent">Succulent</option>
+              <option value="Fern">Fern</option>
+              <option value="Flowering">Flowering</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Bonsai">Bonsai</option>
+              <option value="Cactus">Cactus</option>
             </select>
           </div>
 
@@ -48,9 +72,9 @@ const AddPlants = () => {
             </label>
             <select required name="careLevel" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm ">
               <option value="">Select a care level from below</option>
-              <option value="easy">Easy</option>
-              <option value="moderate">Moderate</option>
-              <option value="difficult">Difficult</option>
+              <option value="Easy">Easy</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Difficult">Difficult</option>
             </select>
           </div>
 
@@ -85,9 +109,11 @@ const AddPlants = () => {
             </label>
             <select required name="healthStatus" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm ">
               <option value="">Select health status from below</option>
-              <option value="healthy">Healthy</option>
-              <option value="okay">Okay</option>
-              <option value="needs_attention">Needs Attention</option>
+              <option value="Looking Healthy">Looking Healthy</option>
+              <option value="Fair">Fair</option>
+              <option value="Leaves Drying">Leaves Drying</option>
+              <option value="Starting to Wilt">Starting to Wilt</option>
+              <option value="Needs Care">Needs Care</option>
             </select>
           </div>
 
@@ -100,13 +126,13 @@ const AddPlants = () => {
           {/* User Email */}
           <div className="space-y-1 text-sm">
             <label className="block ">User Email</label>
-            <input required type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md  outline-1 " />
+            <input required type="email" name="email" placeholder="Email" defaultValue={user.email} className="w-full px-4 py-3 rounded-md  outline-1 " />
           </div>
 
           {/* User Name */}
           <div className="space-y-1 text-sm">
             <label className="block ">User Name</label>
-            <input required type="text" name="name" placeholder="User Name" className="w-full px-4 py-3 rounded-md  outline-1" />
+            <input required type="text" name="name" placeholder="User Name" defaultValue={user.displayName} className="w-full px-4 py-3 rounded-md  outline-1" />
           </div>
 
           {/* Submit Button - Full Width */}
