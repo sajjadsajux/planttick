@@ -1,10 +1,11 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const MyPlantsUpdate = () => {
   const myplant = useLoaderData();
   console.log(myplant);
-  const { _id, plantname, category, careLevel, description, email, healthStatus, image, lastWatered, name, nextWatering, wateringFrequency } = myplant;
+  const { _id, plantname, category, careLevel, description, healthStatus, image, lastWatered, nextWatering, wateringFrequency } = myplant;
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -23,6 +24,13 @@ const MyPlantsUpdate = () => {
       .then((data) => {
         if (data.modifiedCount) {
           console.log("Update Data", data);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Plant Updated SuccessFully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
   };

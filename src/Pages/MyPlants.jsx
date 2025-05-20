@@ -1,9 +1,11 @@
 import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
+  const { _id } = user;
   const [plants, setPlants] = useState([]);
   useEffect(() => {
     if (user?.email) {
@@ -14,7 +16,37 @@ const MyPlants = () => {
     }
   }, [user]);
 
-  const handleDelete = () => {};
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      console.log(result.isConfirmed);
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/myplants/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your plant has been deleted.",
+                icon: "success",
+              });
+
+              const remainingPlants = plants.filter((plant) => plant?._id !== _id);
+              setPlants(remainingPlants);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="container mx-auto p-6">
