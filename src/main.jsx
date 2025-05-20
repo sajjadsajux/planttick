@@ -15,6 +15,7 @@ import AllPlants from "./Pages/AllPlants.jsx";
 import AllPlantDetails from "./Pages/AllPlantDetails.jsx";
 import MyPlants from "./Pages/MyPlants.jsx";
 import Loader from "./Utilities/Loader.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    Component: ErrorPage,
   },
 ]);
 
