@@ -12,6 +12,9 @@ import AddPlants from "./Pages/AddPlants.jsx";
 import AuthProvider from "./Contexts/AuthProvider.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AllPlants from "./Pages/AllPlants.jsx";
+import AllPlantDetails from "./Pages/AllPlantDetails.jsx";
+import MyPlants from "./Pages/MyPlants.jsx";
+import Loader from "./Utilities/Loader.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,13 +36,34 @@ const router = createBrowserRouter([
       {
         path: "/allplants",
         loader: () => fetch("http://localhost:3000/plants"),
+        hydrateFallbackElement: <Loader></Loader>,
+
         Component: AllPlants,
+      },
+      {
+        path: "/plant/:id",
+        loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
+        hydrateFallbackElement: <Loader></Loader>,
+        element: (
+          <PrivateRoute>
+            <AllPlantDetails></AllPlantDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addplants",
         element: (
           <PrivateRoute>
             <AddPlants></AddPlants>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myplants",
+        loader: () => fetch("http://localhost:3000/myplants"),
+        element: (
+          <PrivateRoute>
+            <MyPlants></MyPlants>
           </PrivateRoute>
         ),
       },

@@ -1,10 +1,14 @@
 import React, { use } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 
 const Login = () => {
   const { signInUser, signInGoogle } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,6 +19,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         alert(error.message);

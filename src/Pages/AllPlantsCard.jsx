@@ -29,7 +29,7 @@ const AllPlantsCard = ({ plants }) => {
                   <td className="px-4 py-2">Every {plant.wateringFrequency} days</td>
                   <td className="px-4 py-2">{plant.healthStatus}</td>
                   <td className="px-4 py-2">
-                    <Link to={`/plants/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
+                    <Link to={`/plant/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
                       View Details
                     </Link>
                   </td>
