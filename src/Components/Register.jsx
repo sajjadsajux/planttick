@@ -1,20 +1,31 @@
 import React, { use } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 
 const Register = () => {
-  const { signUpUser } = use(AuthContext);
+  const { signUpUser, setUser, updateUser } = use(AuthContext);
+
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const newUser = Object.fromEntries(formData.entries());
-    const { email, password } = newUser;
+    const { email, password, photo, name } = newUser;
     console.log(email);
     signUpUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+            navigate("/");
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
       })
       .catch((error) => {
         console.log(error.message);

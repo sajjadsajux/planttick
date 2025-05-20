@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { LuUserPlus } from "react-icons/lu";
 import { NavLink } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -59,7 +60,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2">
           {user ? (
-            <div>
+            <div className="flex gap-2 items-center justify-center">
+              <img className="h-10 w-10 rounded-2xl object-cover" src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
+              <Tooltip id="my-tooltip" />
+
               <button onClick={handleLogOut} className="btn btn-primary">
                 LogOut
               </button>
