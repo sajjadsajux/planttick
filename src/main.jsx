@@ -17,6 +17,7 @@ import MyPlants from "./Pages/MyPlants.jsx";
 import Loader from "./Utilities/Loader.jsx";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import MyPlantsUpdate from "./Pages/MyPlantsUpdate.jsx";
+import NewPlantDetails from "./Pages/NewPlantDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,15 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyPlantsUpdate></MyPlantsUpdate>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/newplant/:id",
+        loader: ({ params }) => fetch(`http://localhost:3000/newplants/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <NewPlantDetails></NewPlantDetails>
           </PrivateRoute>
         ),
       },

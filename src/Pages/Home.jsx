@@ -3,6 +3,7 @@ import HomeSlider from "../Components/HomeSlider";
 import { AuthContext } from "../Contexts/AuthContext";
 import PlantCareBasics from "../Components/PlantCareBasics";
 import PlantCalender from "../Components/PlantCalender";
+import NewPlants from "../Components/NewPlants";
 
 const Home = () => {
   const { name } = use(AuthContext);
@@ -11,6 +12,9 @@ const Home = () => {
     <div>
       <section className="w-full ">
         <HomeSlider></HomeSlider>
+      </section>
+      <section>
+        <NewPlants></NewPlants>
       </section>
       <section className="">
         <PlantCareBasics></PlantCareBasics>

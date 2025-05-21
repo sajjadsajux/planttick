@@ -1,6 +1,5 @@
 import React from "react";
 import { FaLeaf } from "react-icons/fa";
-
 const PlantCareBasics = () => {
   const tips = [
     {

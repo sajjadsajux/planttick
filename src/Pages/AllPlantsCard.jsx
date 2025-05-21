@@ -26,7 +26,14 @@ const AllPlantsCard = ({ plants }) => {
                   </td>
                   <td className="px-4 py-2 font-medium">{plant.plantname}</td>
                   <td className="px-4 py-2">{plant.category}</td>
-                  <td className="px-4 py-2">Every {plant.wateringFrequency} days</td>
+                  <td className="px-4 py-2">
+                    {new Date(plant.nextWatering).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </td>
+
                   <td className="px-4 py-2">{plant.healthStatus}</td>
                   <td className="px-4 py-2">
                     <Link to={`/plant/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
