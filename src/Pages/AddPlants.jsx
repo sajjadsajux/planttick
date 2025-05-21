@@ -37,16 +37,15 @@ const AddPlants = () => {
       <div className="w-full max-w-4xl p-8 space-y-6 rounded-xl bg-white  mx-auto ">
         <h1 className="text-2xl font-bold text-center">Add Plants</h1>
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleAddPlants}>
-          {/* Image */}
-          <div className="space-y-1 text-sm">
-            <label className="block ">Image</label>
-            <input required type="url" name="image" placeholder="ImageURL" className="w-full px-4 py-3 rounded-md   outline-1" />
-          </div>
-
           {/* Plant Name */}
           <div className="space-y-1 text-sm">
             <label className="block ">Plant Name</label>
             <input required type="text" name="plantname" placeholder="Plant Name" className="w-full px-4 py-3 rounded-md outline-1" />
+          </div>
+          {/* Image */}
+          <div className="space-y-1 text-sm">
+            <label className="block ">Image</label>
+            <input required type="url" name="image" placeholder="ImageURL" className="w-full px-4 py-3 rounded-md   outline-1" />
           </div>
 
           {/* Category */}
@@ -126,13 +125,13 @@ const AddPlants = () => {
           {/* User Email */}
           <div className="space-y-1 text-sm">
             <label className="block ">User Email</label>
-            <input required type="email" name="email" placeholder="Email" defaultValue={user.email} className="w-full px-4 py-3 rounded-md  outline-1 " />
+            <input readOnly required type="email" name="email" placeholder="Email" defaultValue={user.email} className="w-full px-4 py-3 rounded-md  outline-1 " />
           </div>
 
           {/* User Name */}
           <div className="space-y-1 text-sm">
             <label className="block ">User Name</label>
-            <input required type="text" name="name" placeholder="User Name" defaultValue={user.displayName} className="w-full px-4 py-3 rounded-md  outline-1" />
+            <input readOnly required type="text" name="name" placeholder="User Name" defaultValue={user.displayName} className="w-full px-4 py-3 rounded-md  outline-1" />
           </div>
 
           {/* Submit Button - Full Width */}
