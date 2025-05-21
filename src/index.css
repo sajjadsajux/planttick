@@ -1,14 +1,6 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default;
-}
-
-@plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-  --color-primary: #15803d;
-  --color-secondary: white;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .swiper {
   width: 100%;

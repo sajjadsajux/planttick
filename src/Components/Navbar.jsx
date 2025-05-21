@@ -22,7 +22,6 @@ const Navbar = () => {
       <li>
         <NavLink>Home</NavLink>
       </li>
-
       <li>
         <NavLink to="/allplants">All Plants</NavLink>
       </li>
@@ -38,6 +37,7 @@ const Navbar = () => {
       )}
     </>
   );
+
   return (
     <div>
       <div className="navbar bg-base-100 ">
@@ -45,8 +45,7 @@ const Navbar = () => {
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden pl-0">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {" "}
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />{" "}
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
@@ -63,7 +62,6 @@ const Navbar = () => {
             <div className="flex gap-2 items-center justify-center">
               <img className="h-10 w-10 rounded-2xl object-cover" src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
               <Tooltip id="my-tooltip" />
-
               <button onClick={handleLogOut} className="btn btn-primary">
                 LogOut
               </button>
@@ -78,6 +76,11 @@ const Navbar = () => {
               </NavLink>
             </div>
           )}
+          <div className="flex items-center gap-2">
+            🌞
+            <input type="checkbox" className="toggle theme-controller" value="dark" aria-label="Theme Toggle" />
+            🌙
+          </div>
         </div>
       </div>
     </div>

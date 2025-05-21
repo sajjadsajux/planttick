@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const AllPlantsCard = ({ plants }) => {
   return (
     <div>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 min-h-screen">
         <h2 className="text-2xl font-bold mb-4 text-center">All Plants</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white text-sm text-gray-700 shadow-md rounded-lg">
