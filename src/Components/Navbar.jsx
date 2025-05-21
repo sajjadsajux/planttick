@@ -1,8 +1,9 @@
 import React, { use } from "react";
 import { LuUserPlus } from "react-icons/lu";
-import { NavLink } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Tooltip } from "react-tooltip";
+import { NavLink } from "react-router";
+import { MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -20,7 +21,7 @@ const Navbar = () => {
   const linksNav = (
     <>
       <li>
-        <NavLink>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
         <NavLink to="/allplants">All Plants</NavLink>
@@ -43,7 +44,7 @@ const Navbar = () => {
       <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="lg:hidden pl-0">
+            <div tabIndex={0} role="button" className="lg:hidden pl-0 pr-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
@@ -52,7 +53,9 @@ const Navbar = () => {
               {linksNav}
             </ul>
           </div>
-          <a className=" text-xl pl-0">PlantTrick</a>
+          <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold">
+            Plant<span className="text-primary">Tick</span>
+          </h3>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{linksNav}</ul>
@@ -60,26 +63,46 @@ const Navbar = () => {
         <div className="navbar-end gap-2">
           {user ? (
             <div className="flex gap-2 items-center justify-center">
-              <img className="h-10 w-10 rounded-2xl object-cover" src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
+              <img className="h-10 w-10 rounded-2xl object-cover " src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
               <Tooltip id="my-tooltip" />
-              <button onClick={handleLogOut} className="btn btn-primary">
+              <button onClick={handleLogOut} className="hover:bg-red-600 btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base ml-2 ">
                 LogOut
               </button>
             </div>
           ) : (
             <div>
-              <NavLink className="btn btn-primary" to="/login">
+              <NavLink className="btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base" to="/login">
                 Login
               </NavLink>{" "}
-              <NavLink className="btn btn-primary" to="/register">
+              <NavLink className="btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base" to="/register">
                 Register
               </NavLink>
             </div>
           )}
-          <div className="flex items-center gap-2">
-            🌞
-            <input type="checkbox" className="toggle theme-controller" value="dark" aria-label="Theme Toggle" />
-            🌙
+          <div className="ml-4 md:ml-1">
+            <label className="toggle text-base-content">
+              <input type="checkbox" value="dark" className="theme-controller" />
+
+              <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M12 2v2"></path>
+                  <path d="M12 20v2"></path>
+                  <path d="m4.93 4.93 1.41 1.41"></path>
+                  <path d="m17.66 17.66 1.41 1.41"></path>
+                  <path d="M2 12h2"></path>
+                  <path d="M20 12h2"></path>
+                  <path d="m6.34 17.66-1.41 1.41"></path>
+                  <path d="m19.07 4.93-1.41 1.41"></path>
+                </g>
+              </svg>
+
+              <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </g>
+              </svg>
+            </label>
           </div>
         </div>
       </div>

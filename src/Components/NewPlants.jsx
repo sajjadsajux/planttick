@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import NewPlantsHeader from "../Animations/NewPlantsHeader";
 
 const NewPlants = () => {
   const [newPlants, setNewPlants] = useState([]);
@@ -16,14 +17,14 @@ const NewPlants = () => {
   return (
     <section className="py-12 ">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-green-700 text-center mb-8">🌿 New Plants</h2>
-
+        <NewPlantsHeader></NewPlantsHeader>
+        <p className="text-base text-gray-700 md:text-lg dark:text-gray-300 text-center mb-10">A collection of simple, effective tips to help your plants thrive all year long.</p>
         {newPlants.length === 0 ? (
           <p className="text-center text-gray-500">Add Plants to show here...</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {newPlants.map((plant) => (
-              <div key={plant.id} className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
+              <div key={plant._id} className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 group">
                 <div className="md:w-2/4 w-full">
                   <img src={plant.image} alt={plant.name} className="h-64 md:h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 </div>
