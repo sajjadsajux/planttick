@@ -1,6 +1,8 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import SetTitle from "../Utilities/SetTitle";
 
 const MyPlantsUpdate = () => {
   const myplant = useLoaderData();
@@ -23,35 +25,50 @@ const MyPlantsUpdate = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          // console.log("Update Data", data);
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Plant Updated SuccessFully",
-            showConfirmButton: false,
-            timer: 1500,
+          console.log("Update Data", data);
+          toast.success("Plant Details Updated Successfully!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+        } else if (data.modifiedCount === 0) {
+          toast.warn("Everything is Up to Date!!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
           });
         }
       });
   };
+  SetTitle(`Update Plant - ${plantname}`);
   return (
     <div>
       <div className="bg-green-100 p-10 dark:bg-gray-900 container mx-auto">
         <div className="w-full max-w-4xl p-8 space-y-6 rounded-xl bg-white dark:bg-gray-800 mx-auto">
           <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-gray-100">Update Plant</h1>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleUpdate}>
-            {/* Image */}
-            <div className="space-y-1 text-sm">
-              <label className="block text-gray-900 dark:text-gray-200">Image</label>
-              <input required type="url" name="image" placeholder="ImageURL" defaultValue={image} className="w-full px-4 py-3 rounded-md outline-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
-            </div>
-
             {/* Plant Name */}
             <div className="space-y-1 text-sm">
               <label className="block text-gray-900 dark:text-gray-200">Plant Name</label>
               <input required type="text" name="plantname" placeholder="Plant Name" defaultValue={plantname} className="w-full px-4 py-3 rounded-md outline-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
             </div>
-
+            {/* Image */}
+            <div className="space-y-1 text-sm">
+              <label className="block text-gray-900 dark:text-gray-200">Image</label>
+              <input required type="url" name="image" placeholder="ImageURL" defaultValue={image} className="w-full px-4 py-3 rounded-md outline-1 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
+            </div>
             {/* Category */}
             <div className="space-y-1 text-sm">
               <label htmlFor="category" className="block text-sm font-medium text-gray-900 dark:text-gray-200">

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
+import SetTitle from "../Utilities/SetTitle";
 
 const AddPlants = () => {
   const { user } = useContext(AuthContext);
@@ -34,15 +35,15 @@ const AddPlants = () => {
         }
       });
   };
-
+  SetTitle("Add Plant");
   return (
-    <div className="min-h-screen py-12 bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4">
+    <div className="min-h-screen py-12 container mx-auto bg-green-50 dark:bg-gray-900 flex items-center justify-center px-4">
       <div className="w-full max-w-4xl p-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
         <h1 className="text-3xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-8">Add Plants</h1>
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-900 dark:text-gray-100" onSubmit={handleAddPlants}>
           {/* Plant Name */}
-          <div className="space-y-1">
+          <div className="space-y-1 md:col-span-2">
             <label className="block font-semibold">Plant Name</label>
             <input required type="text" name="plantname" placeholder="Plant Name" className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
           </div>
@@ -148,8 +149,8 @@ const AddPlants = () => {
 
           {/* Submit Button */}
           <div className="md:col-span-2">
-            <button type="submit" className="w-full py-3 rounded-md bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold hover:from-green-700 hover:to-green-500 transition">
-              Register
+            <button type="submit" className="w-full py-3 rounded-md bg-primary text-white font-semibold  hover:bg-green-600 transition">
+              Add Plant
             </button>
           </div>
         </form>

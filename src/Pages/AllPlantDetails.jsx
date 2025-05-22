@@ -1,61 +1,55 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import SetTitle from "../Utilities/SetTitle";
 
 const AllPlantDetails = () => {
   const plant = useLoaderData();
+  SetTitle(`Plant Details - ${plant.plantname}`);
+
   return (
-    <div>
-      <div className="max-w-4xl mx-auto mt-10 p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-3xl shadow-xl">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
+    <div className="py-10 px-4 sm:px-6 lg:px-8 bg-green-50 container mx-auto lg:h-[100vh] flex items-center justify-center ">
+      <div className="max-w-6xl mx-auto bg-white/70 backdrop-blur-md border border-green-200 rounded-3xl shadow-2xl p-8 transition duration-300 hover:shadow-green-200 transform hover:scale-105">
+        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
           {/* Plant Image */}
-          <div className="flex-shrink-0">
-            <img src={plant.image} alt={plant.plantname} className="w-72 h-72 object-cover rounded-2xl shadow-lg border-4 border-green-300" />
+          <div className="w-full md:w-80 flex-shrink-0">
+            <img src={plant.image} alt={plant.plantname} className="w-full h-80 object-cover rounded-2xl shadow-lg border-4 border-green-300" />
           </div>
 
           {/* Plant Info */}
-          <div className="flex-1 space-y-4 text-gray-800">
+          <div className="flex-1 space-y-5 text-gray-800">
             <h2 className="text-4xl font-bold text-green-700">{plant.plantname}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
                 <p>
-                  <span className="font-semibold">Category:</span> {plant.category}
+                  <span className="font-semibold text-green-800">Category:</span> {plant.category}
                 </p>
                 <p>
-                  <span className="font-semibold">Care Level:</span> {plant.careLevel}
+                  <span className="font-semibold text-green-800">Care Level:</span> {plant.careLevel}
                 </p>
                 <p>
-                  <span className="font-semibold">Watering:</span> Every {plant.wateringFrequency} days
+                  <span className="font-semibold text-green-800">Watering:</span> Every {plant.wateringFrequency} days
                 </p>
               </div>
-              <div>
-                <p>
-                  <span className="font-semibold">Last Watered:</span>{" "}
-                  {new Date(plant.lastWatered).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
-                <p>
-                  <span className="font-semibold">Next Watering:</span>{" "}
-                  {new Date(plant.nextWatering).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </p>
 
+              <div className="space-y-2">
                 <p>
-                  <span className="font-semibold">Health:</span> {plant.healthStatus}
+                  <span className="font-semibold text-green-800">Last Watered:</span> {new Date(plant.lastWatered).toLocaleDateString()}
+                </p>
+                <p>
+                  <span className="font-semibold text-green-800">Next Watering:</span> {new Date(plant.nextWatering).toLocaleDateString()}
+                </p>
+                <p>
+                  <span className="font-semibold text-green-800">Health:</span> {plant.healthStatus}
                 </p>
               </div>
             </div>
-            <p className="mt-4">
-              <span className="font-semibold">📝 Description:</span> {plant.description}
+
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              <span className="font-semibold">Description:</span> {plant.description}
             </p>
-            <p className="text-sm text-gray-500 mt-2">
-              👤 Added by {plant.name} ({plant.email})
-            </p>
+
+            <p className="text-sm text-gray-500 mt-3">Added by {plant.name}</p>
           </div>
         </div>
       </div>

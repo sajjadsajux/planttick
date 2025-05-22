@@ -1,13 +1,15 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import AllPlantsCard from "./AllPlantsCard";
+import SetTitle from "../Utilities/SetTitle";
 
 const AllPlants = () => {
   const plants = useLoaderData();
-  console.log(plants);
+  // console.log(plants);
+  SetTitle("All Plants");
+
   return (
     <div>
-      <h2>AllPlants</h2>
       <div>
         <AllPlantsCard plants={plants}></AllPlantsCard>
       </div>

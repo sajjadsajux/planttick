@@ -2,6 +2,8 @@ import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
+import { Bounce, toast } from "react-toastify";
+import SetTitle from "../Utilities/SetTitle";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
@@ -34,10 +36,16 @@ const MyPlants = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your plant has been deleted.",
-                icon: "success",
+              toast.error("Your plant has been deleted", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
               });
 
               const remainingPlants = plants.filter((plant) => plant?._id !== _id);
@@ -47,20 +55,24 @@ const MyPlants = () => {
       }
     });
   };
-
+  SetTitle("My Plants");
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">My Plants</h1>
+      <h1 className="text-3xl font-bold text-center mb-8  dark:text-white">My Plants</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {plants.map((plant) => (
-          <div key={plant._id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col">
+          <div
+            key={plant._id}
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col transform hover:scale-105 transition duration-300
+"
+          >
             {/* Image */}
             <img src={plant.image} alt={plant.plantname} className="w-full h-48 object-cover" />
 
             {/* Info */}
             <div className="p-4 space-y-2 flex-grow text-gray-900 dark:text-gray-200">
-              <h2 className="text-xl font-semibold">{plant.plantname}</h2>
+              <h2 className="text-xl font-semibold text-primary">{plant.plantname}</h2>
               <p>
                 <strong>Category:</strong> {plant.category}
               </p>
@@ -99,8 +111,8 @@ const MyPlants = () => {
             </div>
 
             {/* Buttons */}
-            <div className="p-4 flex justify-between border-t border-gray-200 dark:border-gray-700">
-              <Link to={`/myplants-update/${plant._id}`} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+            <div className="p-4 flex  justify-between border-t border-gray-200 dark:border-gray-700">
+              <Link to={`/myplants-update/${plant._id}`} className="px-4 py-2 bg-primary text-white rounded hover:bg-green-800 transition">
                 Update
               </Link>
               <button onClick={() => handleDelete(plant._id)} className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">

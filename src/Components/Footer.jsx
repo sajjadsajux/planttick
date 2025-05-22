@@ -1,104 +1,99 @@
-import React from "react";
+import React, { use } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { AuthContext } from "../Contexts/AuthContext";
+import { NavLink } from "react-router";
 
 const Footer = () => {
+  const { user } = use(AuthContext);
   return (
-    <footer className="bg-primary text-primary-content px-4 divide-y">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between py-10 space-y-8 lg:space-y-0">
+    <footer className="bg-primary text-primary-content px-4 sm:px-6 lg:px-8 divide-y">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between py-10 gap-10">
         {/* Logo Section */}
-        <div className="lg:w-1/3 ">
-          <div href="#" rel="noopener noreferrer" className="flex items-center justify-center lg:justify-start space-x-3">
-            <img src="" alt="" />
-            <h3 className="text-xl  md:text-2xl lg:text-3xl font-bold text-primary bg-white p-2 rounded-2xl md:pl-2">
-              Plant<span className="text-black ">Tick</span>
-            </h3>
-          </div>
+        <div className="flex justify-center lg:justify-start items-center">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
+            <span className="inline-block bg-white text-primary px-3 py-1 rounded-2xl">Plant</span>
+            <span className="text-white ml-2">Tick</span>
+          </h3>
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-8 lg:w-2/3 text-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 text-sm flex-1">
+          {/* Product */}
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase text-green-200">Product</h3>
+            <h3 className="tracking-wide uppercase text-green-200">Navigations</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Features
-                </a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Integrations
-                </a>
+                <NavLink to="/allplants">All Plants</NavLink>
               </li>
-              <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  FAQ
-                </a>
-              </li>
+              {user && (
+                <>
+                  <li>
+                    <NavLink to="/addplants">Add Plant</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/myplants">My Plants</NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
+          {/* Company */}
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase text-green-200">Company</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Privacy
-                </a>
+                <NavLink to="/privacy-policy">Privacy Policy</NavLink>
               </li>
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Terms of Service
-                </a>
+                <NavLink to="/terms">Terms & Condition</NavLink>
               </li>
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div className="space-y-3">
-            <h3 className="uppercase text-green-200">Developers</h3>
+            <h3 className="uppercase text-green-200">Contact</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Public API
+                Email:{" "}
+                <a href="mailto:support@planttick.com" className="hover:underline">
+                  support@planttick.com
                 </a>
               </li>
               <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Documentation
+                Phone:{" "}
+                <a href="tel:+880123456789" className="hover:underline">
+                  +880 1629202095
                 </a>
               </li>
-              <li>
-                <a href="#" rel="noopener noreferrer" className="hover:underline">
-                  Guides
-                </a>
-              </li>
+              <li>Address: Sreemangal, Sylhet, Bangladesh</li>
             </ul>
           </div>
+        </div>
 
-          <div className="space-y-3">
-            <div className="uppercase text-green-200">Social media</div>
-            <div className="flex space-x-3">
-              <a href="#" rel="noopener noreferrer" title="Facebook" className="p-1 hover:text-green-300">
-                <FaFacebook size={25} />
-              </a>
-              <a href="#" rel="noopener noreferrer" title="Twitter" className="p-1 hover:text-green-300">
-                <FaXTwitter size={25} />
-              </a>
-              <a href="#" rel="noopener noreferrer" title="Instagram" className="p-1 hover:text-green-300">
-                <FaInstagram size={25} />
-              </a>
-            </div>
+        {/* Social Media Section */}
+        <div className="space-y-3 text-center lg:text-right">
+          <h3 className="uppercase text-green-200">Social media</h3>
+          <div className="flex justify-center lg:justify-end space-x-4">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-green-300">
+              <FaFacebook size={24} />
+            </a>
+            <a href="https://x.com/home" target="_blank" rel="noopener noreferrer" className="hover:text-green-300">
+              <FaXTwitter size={24} />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-green-300">
+              <FaInstagram size={24} />
+            </a>
           </div>
         </div>
       </div>
 
-      <div className="py-6 text-center text-green-300 text-sm">© 1968 Company Co. All rights reserved.</div>
+      <div className="py-6 text-center text-green-300 text-sm">© 2025 PlantTick Team. All rights reserved.</div>
     </footer>
   );
 };

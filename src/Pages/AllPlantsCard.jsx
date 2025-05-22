@@ -15,7 +15,7 @@ const AllPlantsCard = ({ plants }) => {
                 <th className="px-4 py-2 text-left">Category</th>
                 <th className="px-4 py-2 text-left">Next Watering</th>
                 <th className="px-4 py-2 text-left">Health Status</th>
-                <th className="px-4 py-2 text-left">Action</th>
+                <th className="px-12 md:px-4 py-2 text-left">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -36,7 +36,7 @@ const AllPlantsCard = ({ plants }) => {
 
                   <td className="px-4 py-2">{plant.healthStatus}</td>
                   <td className="px-4 py-2">
-                    <Link to={`/plant/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700">
+                    <Link to={`/plant/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 ">
                       View Details
                     </Link>
                   </td>

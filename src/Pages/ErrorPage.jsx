@@ -1,25 +1,27 @@
-import React, { memo } from "react";
+import React from "react";
 import { Link } from "react-router";
+import ErrorHeader from "../Animations/ErrorHeader";
+import SetTitle from "../Utilities/SetTitle";
 
-const ErrorPage = memo(() => {
+const ErrorPage = () => {
+  SetTitle("Page Not Found");
   return (
-    <div>
-      <section className="flex items-center h-[100vh] p-16 bg-green-700 text-white">
-        <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-          <div className="max-w-md text-center">
-            <h2 className="mb-8 font-extrabold text-9xl text-gray-600">
-              <span className="sr-only">Error</span>404
-            </h2>
-            <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-            <p className="mt-4 mb-8 text-gray-400">But dont worry, you can find plenty of other things on our homepage.</p>
-            <Link to="/" className="px-8 py-3 font-semibold rounded bg-violet-400 text-gray-900">
-              Back to homepage
-            </Link>
-          </div>
+    <div className="">
+      <section
+        className="flex items-center justify-center h-screen p-8 bg-gradient-to-br from-green-700 via-green-800 to-black
+ text-white py-10 md:py-0"
+      >
+        <div className="flex flex-col items-center text-center">
+          <ErrorHeader></ErrorHeader>
+          <p className="text-3xl md:text-4xl font-semibold mt-6">Sorry, we couldn't find this page.</p>
+          <p className="mt-4 mb-8 text-gray-300 max-w-md">But don't worry—you can find lots of interesting things on our homepage.</p>
+          <Link to="/" className="px-6 py-3 rounded-full bg-white text-green-800 font-bold shadow-md hover:bg-green-100 transition duration-300">
+            Back to Homepage
+          </Link>
         </div>
       </section>
     </div>
   );
-});
+};
 
 export default ErrorPage;
