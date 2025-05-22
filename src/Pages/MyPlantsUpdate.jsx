@@ -13,7 +13,7 @@ const MyPlantsUpdate = () => {
     const updatePlants = Object.fromEntries(formData.entries());
     console.log(updatePlants);
     // patch
-    fetch(`http://localhost:3000/myplants/${_id}`, {
+    fetch(`https://planttick-server.vercel.app/myplants/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -23,7 +23,7 @@ const MyPlantsUpdate = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          console.log("Update Data", data);
+          // console.log("Update Data", data);
           Swal.fire({
             position: "top-end",
             icon: "success",

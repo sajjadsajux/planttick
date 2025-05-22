@@ -15,7 +15,7 @@ const AddPlants = () => {
     newPlantData.lastWatered = new Date(newPlantData.lastWatered);
     newPlantData.nextWatering = new Date(newPlantData.nextWatering);
 
-    fetch("http://localhost:3000/plants", {
+    fetch("https://planttick-server.vercel.app/plants", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newPlantData),

@@ -6,10 +6,10 @@ const NewPlants = () => {
   const [newPlants, setNewPlants] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/newplants")
+    fetch("https://planttick-server.vercel.app/newplants")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setNewPlants(data);
       });
   }, []);

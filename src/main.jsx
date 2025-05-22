@@ -38,14 +38,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/allplants",
-        loader: () => fetch("http://localhost:3000/plants"),
+        loader: () => fetch("https://planttick-server.vercel.app/plants"),
         hydrateFallbackElement: <Loader></Loader>,
 
         Component: AllPlants,
       },
       {
         path: "/plant/:id",
-        loader: ({ params }) => fetch(`http://localhost:3000/plants/${params.id}`),
+        loader: ({ params }) => fetch(`https://planttick-server.vercel.app/plants/${params.id}`),
         hydrateFallbackElement: <Loader></Loader>,
         element: (
           <PrivateRoute>
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/myplants-update/:id",
-        loader: ({ params }) => fetch(`http://localhost:3000/myplants/${params.id}`),
+        loader: ({ params }) => fetch(`https://planttick-server.vercel.app/myplants/${params.id}`),
         element: (
           <PrivateRoute>
             <MyPlantsUpdate></MyPlantsUpdate>
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/newplant/:id",
-        loader: ({ params }) => fetch(`http://localhost:3000/newplants/${params.id}`),
+        loader: ({ params }) => fetch(`https://planttick-server.vercel.app/newplants/${params.id}`),
         element: (
           <PrivateRoute>
             <NewPlantDetails></NewPlantDetails>

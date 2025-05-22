@@ -9,7 +9,7 @@ const MyPlants = () => {
   const [plants, setPlants] = useState([]);
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myplants?email=${user.email}`)
+      fetch(`https://planttick-server.vercel.app/myplants?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setPlants(data))
         .catch((err) => console.error(err));
@@ -26,9 +26,9 @@ const MyPlants = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      console.log(result.isConfirmed);
+      // console.log(result.isConfirmed);
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/myplants/${_id}`, {
+        fetch(`https://planttick-server.vercel.app/myplants/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
