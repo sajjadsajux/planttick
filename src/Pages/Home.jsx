@@ -3,8 +3,10 @@ import HomeSlider from "../Components/HomeSlider";
 import PlantCareBasics from "../Components/PlantCareBasics";
 import PlantCalender from "../Components/PlantCalender";
 import NewPlants from "../Components/NewPlants";
+import SetTitle from "../Utilities/SetTitle";
 
 const Home = () => {
+  SetTitle("Home - Welcome to PlantTick");
   return (
     <div>
       <section className="w-full ">

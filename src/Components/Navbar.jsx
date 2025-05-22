@@ -1,9 +1,7 @@
 import React, { use } from "react";
-import { LuUserPlus } from "react-icons/lu";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Tooltip } from "react-tooltip";
 import { NavLink } from "react-router";
-import { MdLightMode } from "react-icons/md";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -29,10 +27,10 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <NavLink to="/addplants">Add Plants</NavLink>
+            <NavLink to="/addplants">Add Plant</NavLink>
           </li>
           <li>
-            <NavLink to="myplants">My Plant</NavLink>
+            <NavLink to="myplants">My Plants</NavLink>
           </li>
         </>
       )}
@@ -53,7 +51,7 @@ const Navbar = () => {
               {linksNav}
             </ul>
           </div>
-          <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold">
+          <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold ">
             Plant<span className="text-primary">Tick</span>
           </h3>
         </div>
@@ -65,7 +63,7 @@ const Navbar = () => {
             <div className="flex gap-2 items-center justify-center">
               <img className="h-10 w-10 rounded-2xl object-cover " src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
               <Tooltip id="my-tooltip" />
-              <button onClick={handleLogOut} className="hover:bg-red-600 btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base ml-2 ">
+              <button onClick={handleLogOut} className="hover:bg-red-600 btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base ml-1">
                 LogOut
               </button>
             </div>
@@ -79,7 +77,7 @@ const Navbar = () => {
               </NavLink>
             </div>
           )}
-          <div className="ml-4 md:ml-1">
+          <div className="ml-2 md:ml-1">
             <label className="toggle text-base-content">
               <input type="checkbox" value="dark" className="theme-controller" />
 
