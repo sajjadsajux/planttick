@@ -18,24 +18,35 @@ const AllPlantDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <p>
-                  <span className="font-semibold">🌿 Category:</span> {plant.category}
+                  <span className="font-semibold">Category:</span> {plant.category}
                 </p>
                 <p>
-                  <span className="font-semibold">🧪 Care Level:</span> {plant.careLevel}
+                  <span className="font-semibold">Care Level:</span> {plant.careLevel}
                 </p>
                 <p>
-                  <span className="font-semibold">💧 Watering:</span> Every {plant.wateringFrequency} days
+                  <span className="font-semibold">Watering:</span> Every {plant.wateringFrequency} days
                 </p>
               </div>
               <div>
                 <p>
-                  <span className="font-semibold">📅 Last Watered:</span> {plant.lastWatered}
+                  <span className="font-semibold">Last Watered:</span>{" "}
+                  {new Date(plant.lastWatered).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
                 </p>
                 <p>
-                  <span className="font-semibold">📆 Next Watering:</span> {plant.nextWatering}
+                  <span className="font-semibold">Next Watering:</span>{" "}
+                  {new Date(plant.nextWatering).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
                 </p>
+
                 <p>
-                  <span className="font-semibold">❤️ Health:</span> {plant.healthStatus}
+                  <span className="font-semibold">Health:</span> {plant.healthStatus}
                 </p>
               </div>
             </div>

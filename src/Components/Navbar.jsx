@@ -63,21 +63,21 @@ const Navbar = () => {
             <div className="flex gap-2 items-center justify-center">
               <img className="h-10 w-10 rounded-2xl object-cover " src={user.photoURL} alt="" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} data-tooltip-place="left" />
               <Tooltip id="my-tooltip" />
-              <button onClick={handleLogOut} className="hover:bg-red-600 btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base ml-1">
+              <button onClick={handleLogOut} className="hover:bg-red-600 btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base ml-1  mr-3 md:mr-0">
                 LogOut
               </button>
             </div>
           ) : (
-            <div>
-              <NavLink className="btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base" to="/login">
+            <div className="flex flex-row flex-nowrap gap-2">
+              <NavLink className="btn btn-primary px-2 py-1 md:btn-md md:text-base rounded-2xl text-sm " to="/login">
                 Login
-              </NavLink>{" "}
-              <NavLink className="btn btn-primary btn-sm md:btn-md rounded-2xl text-sm md:text-base" to="/register">
+              </NavLink>
+              <NavLink className="btn btn-primary px-2 py-1 md:btn-md md:text-base rounded-2xl text-sm" to="/register">
                 Register
               </NavLink>
             </div>
           )}
-          <div className="ml-2 md:ml-1">
+          <div className="ml-[2px] md:ml-1">
             <label className="toggle text-base-content">
               <input type="checkbox" value="dark" className="theme-controller" />
 

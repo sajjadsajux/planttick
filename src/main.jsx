@@ -18,6 +18,7 @@ import Loader from "./Utilities/Loader.jsx";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import MyPlantsUpdate from "./Pages/MyPlantsUpdate.jsx";
 import NewPlantDetails from "./Pages/NewPlantDetails.jsx";
+import { ToastContainer } from "react-toastify";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -98,6 +99,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      <ToastContainer></ToastContainer>
     </AuthProvider>
   </StrictMode>
 );

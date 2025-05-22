@@ -13,7 +13,7 @@ const AllPlantsCard = ({ plants }) => {
                 <th className="px-4 py-2 text-left">Image</th>
                 <th className="px-4 py-2 text-left">Plant Name</th>
                 <th className="px-4 py-2 text-left">Category</th>
-                <th className="px-4 py-2 text-left">Watering Frequency</th>
+                <th className="px-4 py-2 text-left">Next Watering</th>
                 <th className="px-4 py-2 text-left">Health Status</th>
                 <th className="px-4 py-2 text-left">Action</th>
               </tr>
