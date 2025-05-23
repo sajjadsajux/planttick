@@ -6,14 +6,14 @@ import SetTitle from "../Utilities/SetTitle";
 
 const MyPlantsUpdate = () => {
   const myplant = useLoaderData();
-  console.log(myplant);
+  // console.log(myplant);
   const { _id, plantname, category, careLevel, description, healthStatus, image, lastWatered, nextWatering, wateringFrequency } = myplant;
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const updatePlants = Object.fromEntries(formData.entries());
-    console.log(updatePlants);
+    // console.log(updatePlants);
     // patch
     fetch(`https://planttick-server.vercel.app/myplants/${_id}`, {
       method: "PATCH",
@@ -25,7 +25,7 @@ const MyPlantsUpdate = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          console.log("Update Data", data);
+          // console.log("Update Data", data);
           toast.success("Plant Details Updated Successfully!", {
             position: "top-right",
             autoClose: 5000,

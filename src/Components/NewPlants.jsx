@@ -17,8 +17,10 @@ const NewPlants = () => {
   return (
     <section className="py-12 ">
       <div className="container mx-auto px-4">
-        <NewPlantsHeader></NewPlantsHeader>
-        <p className="  md:text-lg text-center mb-10">Add plants, discover new ones, and keep track of their information to help them grow well.</p>
+        <div className="max-w-2xl mx-auto mb-16 text-center">
+          <NewPlantsHeader></NewPlantsHeader>
+          <p className="text-base  md:text-lg  my-10">Simple tips to help your plants grow healthy and strong. Here are some common practices to get you started</p>
+        </div>
         {newPlants.length === 0 ? (
           <p className="text-center text-gray-500">Add Plants to show here...</p>
         ) : (

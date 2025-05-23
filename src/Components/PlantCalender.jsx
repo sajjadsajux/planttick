@@ -1,54 +1,137 @@
 import React from "react";
+import CalendarHeader from "../Animations/CalendarHeader";
 
 const PlantCalender = () => {
-  const careTipsByMonth = {
-    January: ["Check for frost damage", "Reduce watering", "Plan spring planting"],
-    February: ["Prune shrubs", "Start seeds indoors", "Clean pots and tools"],
-    March: ["Fertilize soil", "Prepare garden beds", "Start hardening off seedlings"],
-    April: ["Plant outdoors", "Water newly planted", "Watch for pests"],
-    May: ["Mulch garden beds", "Increase watering", "Support climbing plants"],
-    June: ["Deadhead flowers", "Harvest herbs", "Water in mornings"],
-    July: ["Protect from heat", "Prune summer flowering shrubs", "Check irrigation"],
-    August: ["Plan fall garden", "Collect seeds", "Water deeply"],
-    September: ["Plant bulbs", "Rake leaves", "Fertilize perennials"],
-    October: ["Prepare compost", "Cover sensitive plants", "Clean garden tools"],
-    November: ["Mulch plants", "Reduce watering", "Protect pots from frost"],
-    December: ["Review garden plan", "Order seeds", "Indoor plant care"],
-  };
-
-  const monthIcons = {
-    January: "❄️",
-    February: "🌱",
-    March: "🌷",
-    April: "🌦️",
-    May: "🌸",
-    June: "🌞",
-    July: "🌻",
-    August: "🍂",
-    September: "🍁",
-    October: "🎃",
-    November: "🍃",
-    December: "🎄",
-  };
-
   return (
-    <div className="container mx-auto p-6" aria-labelledby="plant-care-calendar-heading">
-      <h2 id="plant-care-calendar-heading" className="text-3xl font-bold mb-6 text-center">
-        Plant Care Calendar
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {Object.entries(careTipsByMonth).map(([month, tips]) => (
-          <div key={month} tabIndex={0} className="bg-white rounded-lg shadow p-4 hover:shadow-lg hover:scale-[1.03] transition-transform cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500">
-            <h3 className="text-xl font-semibold mb-2">
-              {monthIcons[month]} {month}
-            </h3>
-            <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
-              {tips.map((tip, idx) => (
-                <li key={idx}>{tip}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+    <div className="container mx-auto px-4 ">
+      <div className="max-w-2xl mx-auto mb-16 text-center">
+        <CalendarHeader />
+        <p className="text-base md:text-lg  my-10">Easy monthly tips to help your plants grow well. Take care of them step by step and enjoy healthy, beautiful plants all year.</p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* January */}
+        <div className="bg-lime-50 border-l-4 border-green-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-green-700 mb-2">January</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Check for frost damage</li>
+            <li>Reduce watering</li>
+            <li>Plan spring planting</li>
+          </ul>
+        </div>
+
+        {/* February */}
+        <div className="bg-pink-50 border-l-4 border-rose-400 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-rose-700 mb-2">February</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Prune shrubs</li>
+            <li>Start seeds indoors</li>
+            <li>Clean pots and tools</li>
+          </ul>
+        </div>
+
+        {/* March */}
+        <div className="bg-green-50 border-l-4 border-emerald-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-emerald-700 mb-2">March</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Fertilize soil</li>
+            <li>Prepare garden beds</li>
+            <li>Harden off seedlings</li>
+          </ul>
+        </div>
+
+        {/* April */}
+        <div className="bg-lime-100 border-l-4 border-lime-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-lime-700 mb-2">April</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Plant outdoors</li>
+            <li>Water newly planted</li>
+            <li>Watch for pests</li>
+          </ul>
+        </div>
+
+        {/* May */}
+        <div className="bg-pink-100 border-l-4 border-pink-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-pink-700 mb-2">May</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Mulch garden beds</li>
+            <li>Increase watering</li>
+            <li>Support climbing plants</li>
+          </ul>
+        </div>
+
+        {/* June */}
+        <div className="bg-emerald-50 border-l-4 border-green-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-green-700 mb-2">June</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Deadhead flowers</li>
+            <li>Harvest herbs</li>
+            <li>Water in mornings</li>
+          </ul>
+        </div>
+
+        {/* July */}
+        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-yellow-700 mb-2">July</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Protect from heat</li>
+            <li>Prune flowering shrubs</li>
+            <li>Check irrigation</li>
+          </ul>
+        </div>
+
+        {/* August */}
+        <div className="bg-rose-50 border-l-4 border-rose-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-rose-700 mb-2">August</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Plan fall garden</li>
+            <li>Collect seeds</li>
+            <li>Water deeply</li>
+          </ul>
+        </div>
+
+        {/* September */}
+        <div className="bg-amber-50 border-l-4 border-amber-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-amber-700 mb-2">September</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Plant bulbs</li>
+            <li>Rake leaves</li>
+            <li>Fertilize perennials</li>
+          </ul>
+        </div>
+
+        {/* October */}
+        <div className="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-orange-700 mb-2">October</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Prepare compost</li>
+            <li>Cover sensitive plants</li>
+            <li>Clean garden tools</li>
+          </ul>
+        </div>
+
+        {/* November */}
+        <div className="bg-stone-100 border-l-4 border-stone-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
+          <h3 className="text-xl font-semibold text-stone-700 mb-2">November</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Mulch plants</li>
+            <li>Reduce watering</li>
+            <li>Protect pots from frost</li>
+          </ul>
+        </div>
+
+        {/* December */}
+        <div
+          className="bg-sky-50 border-l-4 border-sky-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300
+"
+        >
+          <h3 className="text-xl font-semibold text-sky-700 mb-2">December</h3>
+          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
+            <li>Review garden plan</li>
+            <li>Order seeds</li>
+            <li>Indoor plant care</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

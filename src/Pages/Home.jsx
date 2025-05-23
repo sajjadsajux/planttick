@@ -4,6 +4,7 @@ import PlantCareBasics from "../Components/PlantCareBasics";
 import PlantCalender from "../Components/PlantCalender";
 import NewPlants from "../Components/NewPlants";
 import SetTitle from "../Utilities/SetTitle";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   SetTitle("Home - Welcome to PlantTick");
@@ -21,6 +22,9 @@ const Home = () => {
 
       <section>
         <PlantCalender></PlantCalender>
+      </section>
+      <section>
+        <Newsletter></Newsletter>
       </section>
     </div>
   );
