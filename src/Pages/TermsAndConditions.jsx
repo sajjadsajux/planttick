@@ -1,6 +1,9 @@
 import React from "react";
+import SetTitle from "../Utilities/SetTitle";
 
 const TermsAndConditions = () => {
+  SetTitle("Terms And Conditions");
+
   return (
     <div className="max-w-4xl mx-auto p-6 ">
       <h1 className="text-3xl font-bold mb-6 text-center">Terms & Conditions</h1>
@@ -27,7 +30,7 @@ const TermsAndConditions = () => {
 
       <h2 className="text-xl font-semibold mt-6 mb-2">7. Contact Us</h2>
       <p className="mb-4">
-        If you have any questions about these terms, contact us at <span className="font-medium">support@example.com</span>.
+        If you have any questions about these terms, contact us at <span className="font-medium">supportmail@PlantTick.com</span>.
       </p>
     </div>
   );

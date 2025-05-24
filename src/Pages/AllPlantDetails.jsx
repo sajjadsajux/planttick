@@ -40,7 +40,7 @@ const AllPlantDetails = () => {
                   <span className="font-semibold text-green-800">Next Watering:</span> {new Date(plant.nextWatering).toLocaleDateString()}
                 </p>
                 <p>
-                  <span className="font-semibold text-green-800">Health:</span> {plant.healthStatus}
+                  <span className="font-semibold text-green-800">Health Status:</span> {plant.healthStatus}
                 </p>
               </div>
             </div>

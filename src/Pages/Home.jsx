@@ -7,7 +7,7 @@ import SetTitle from "../Utilities/SetTitle";
 import Newsletter from "./Newsletter";
 
 const Home = () => {
-  SetTitle("Home - Welcome to PlantTick");
+  SetTitle("Home - Track, Care, and Grow with PlantTick");
   return (
     <div>
       <section className="w-full ">

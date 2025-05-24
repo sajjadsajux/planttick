@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Tooltip } from "react-tooltip";
 import { NavLink } from "react-router";
+import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -9,10 +10,21 @@ const Navbar = () => {
   const handleLogOut = () => {
     signOutUser()
       .then(() => {
-        console.log("sign Out Successfully");
+        // console.log("sign Out Successfully");
+        toast("You have successfully logged out", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       })
       .catch((error) => {
-        console.log(error.message);
+        console.log(error.code);
       });
   };
 

@@ -28,7 +28,7 @@ const NewPlantCard = ({ plant }) => {
                 <span className="font-semibold text-green-600 dark:text-green-300">Care Level:</span> {plant.careLevel}
               </p>
               <p>
-                <span className="font-semibold text-green-600 dark:text-green-300">Health:</span> {plant.healthStatus}
+                <span className="font-semibold text-green-600 dark:text-green-300">Health Status:</span> {plant.healthStatus}
               </p>
               <p>
                 <span className="font-semibold text-green-600 dark:text-green-300">Last Watered:</span>{" "}

@@ -4,7 +4,7 @@ import ErrorHeader from "../Animations/ErrorHeader";
 import SetTitle from "../Utilities/SetTitle";
 
 const ErrorPage = () => {
-  SetTitle("Page Not Found");
+  SetTitle("Page Not Found - PlantTick");
   return (
     <div className="">
       <section
