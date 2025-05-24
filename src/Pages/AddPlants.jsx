@@ -37,27 +37,27 @@ const AddPlants = () => {
   };
   SetTitle("Add Plant");
   return (
-    <div className="min-h-screen py-12 container mx-auto bg-green-50 dark:bg-gray-900 flex items-center justify-center px-4">
-      <div className="w-full max-w-4xl p-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-        <h1 className="text-3xl font-extrabold text-center text-gray-900 dark:text-gray-100 mb-8">Add Plants</h1>
+    <div className="min-h-screen  container mx-auto py-5  flex items-center justify-center px-2">
+      <div className="w-full max-w-3xl p-6 bg-base-300  rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+        <h1 className="text-2xl font-bold text-center   mb-6">Add Plants</h1>
 
-        <form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-900 dark:text-gray-100" onSubmit={handleAddPlants}>
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-4   " onSubmit={handleAddPlants}>
           {/* Plant Name */}
           <div className="space-y-1 md:col-span-2">
-            <label className="block font-semibold">Plant Name</label>
-            <input required type="text" name="plantname" placeholder="Plant Name" className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
+            <label className="block font-medium">Plant Name</label>
+            <input required type="text" name="plantname" placeholder="Plant Name" className="w-full px-3 py-2 rounded-md border border-gray-300      focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* Image */}
           <div className="space-y-1">
-            <label className="block font-semibold">Image URL</label>
-            <input required type="url" name="image" placeholder="Image URL" className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
+            <label className="block font-medium">Image URL</label>
+            <input required type="url" name="image" placeholder="Image URL" className="w-full px-3 py-2 rounded-md border border-gray-300      focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* Category */}
           <div className="space-y-1">
-            <label className="block font-semibold">Plant Category</label>
-            <select required name="category" className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+            <label className="block font-medium">Plant Category</label>
+            <select required name="category" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
               <option value="">Select a category</option>
               <option value="Succulent">Succulent</option>
               <option value="Fern">Fern</option>
@@ -70,8 +70,8 @@ const AddPlants = () => {
 
           {/* Care Level */}
           <div className="space-y-1">
-            <label className="block font-semibold">Care Level</label>
-            <select required name="careLevel" className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+            <label className="block font-medium">Care Level</label>
+            <select required name="careLevel" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
               <option value="">Select care level</option>
               <option value="Easy">Easy</option>
               <option value="Moderate">Moderate</option>
@@ -81,45 +81,32 @@ const AddPlants = () => {
 
           {/* Watering Frequency */}
           <div className="space-y-1">
-            <label className="block font-semibold">Watering Frequency (days)</label>
-            <input
-              required
-              type="number"
-              name="wateringFrequency"
-              placeholder="e.g., 3"
-              min="1"
-              className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-            />
+            <label className="block font-medium">Watering Frequency (days)</label>
+            <input required type="number" name="wateringFrequency" placeholder="e.g., 3" min="1" className="w-full mt-1 rounded-md border border-gray-300      focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* Last Watered Date */}
           <div className="space-y-1">
-            <label className="block font-semibold">Last Watered Date</label>
-            <input required type="date" name="lastWatered" className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
+            <label className="block font-medium">Last Watered Date</label>
+            <input required type="date" name="lastWatered" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* Next Watering Date */}
           <div className="space-y-1">
-            <label className="block font-semibold">Next Watering Date</label>
-            <input required type="date" name="nextWatering" className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
+            <label className="block font-medium">Next Watering Date</label>
+            <input required type="date" name="nextWatering" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm " />
           </div>
 
           {/* Added Date */}
           <div className="space-y-1">
-            <label className="block font-semibold">Added Date</label>
-            <input
-              required
-              type="date"
-              name="addedDate"
-              defaultValue={new Date().toISOString().split("T")[0]}
-              className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-            />
+            <label className="block font-medium">Added Date</label>
+            <input required type="date" name="addedDate" defaultValue={new Date().toISOString().split("T")[0]} className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* Health Status */}
           <div className="space-y-1">
-            <label className="block font-semibold">Health Status</label>
-            <select required name="healthStatus" className="w-full mt-1 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+            <label className="block font-medium">Health Status</label>
+            <select required name="healthStatus" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
               <option value="">Select health status</option>
               <option value="Looking Healthy">Looking Healthy</option>
               <option value="Fair">Fair</option>
@@ -131,25 +118,25 @@ const AddPlants = () => {
 
           {/* Description - Full Width */}
           <div className="space-y-1 md:col-span-2">
-            <label className="block font-semibold">Description</label>
-            <input required type="text" name="description" placeholder="Description" className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 transition" />
+            <label className="block font-medium">Description</label>
+            <input required type="text" name="description" placeholder="Description" className="w-full px-3 py-2 rounded-md border border-gray-300      focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm" />
           </div>
 
           {/* User Email */}
           <div className="space-y-1">
-            <label className="block font-semibold">User Email</label>
-            <input readOnly type="email" name="email" defaultValue={user.email} className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none" />
+            <label className="block font-medium">User Email</label>
+            <input readOnly type="email" name="email" defaultValue={user.email} className="w-full px-3 py-2 rounded-md border border-gray-300      focus:outline-none text-sm" />
           </div>
 
           {/* User Name */}
           <div className="space-y-1">
-            <label className="block font-semibold">User Name</label>
-            <input readOnly type="text" name="name" defaultValue={user.displayName} className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none" />
+            <label className="block font-medium">User Name</label>
+            <input readOnly type="text" name="name" defaultValue={user.displayName} className="w-full px-3 py-2 rounded-md border border-gray-300      focus:outline-none text-sm" />
           </div>
 
           {/* Submit Button */}
           <div className="md:col-span-2">
-            <button type="submit" className="w-full py-3 rounded-md bg-primary text-white font-semibold  hover:bg-green-600 transition">
+            <button type="submit" className="w-full py-2 rounded-md bg-primary text-white font-medium hover:bg-green-600 transition text-sm">
               Add Plant
             </button>
           </div>

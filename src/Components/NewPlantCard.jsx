@@ -2,14 +2,14 @@ import React from "react";
 
 const NewPlantCard = ({ plant }) => {
   return (
-    <div className="flex flex-col lg:flex-row bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300 group max-w-7xl mx-auto border border-gray-200 dark:border-gray-700">
+    <div className="flex flex-col lg:flex-row bg-base-300  rounded-2xl shadow-md dark:shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300 group max-w-7xl mx-auto border border-gray-200 dark:border-gray-700">
       {/* Image Section */}
       <div className="w-full lg:w-1/2 h-72 lg:h-auto overflow-hidden rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none">
         <img src={plant.image} alt={plant.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
       </div>
 
       {/* Info Section */}
-      <div className="w-full lg:w-1/2 p-8 flex flex-col justify-between text-gray-900 dark:text-gray-100">
+      <div className="w-full lg:w-1/2 p-8 flex flex-col justify-between  ">
         <div>
           <h2 className="text-3xl font-extrabold text-green-700 dark:text-green-400 mb-6">{plant.plantname}</h2>
 
@@ -58,7 +58,7 @@ const NewPlantCard = ({ plant }) => {
             </p>
           </div>
 
-          <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">{plant.description}</p>
+          <p className="mt-6  leading-relaxed">{plant.description}</p>
         </div>
       </div>
     </div>

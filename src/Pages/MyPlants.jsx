@@ -4,17 +4,21 @@ import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 import { Bounce, toast } from "react-toastify";
 import SetTitle from "../Utilities/SetTitle";
+import Loader from "../Utilities/Loader";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
   const { _id } = user;
   const [plants, setPlants] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
+    setIsLoading(true);
     if (user?.email) {
       fetch(`https://planttick-server.vercel.app/myplants?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => setPlants(data))
-        .catch((err) => console.error(err));
+        .catch((err) => console.error(err))
+        .finally(() => setIsLoading(false));
     }
   }, [user]);
 
@@ -59,69 +63,67 @@ const MyPlants = () => {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-8  dark:text-white">My Plants</h1>
+      {isLoading ? (
+        <Loader></Loader>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {plants.map((plant) => (
+            <div key={plant._id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-[1.02] transition duration-300 border border-gray-100 dark:border-gray-700">
+              {/* Image */}
+              <img src={plant.image} alt={plant.plantname} className="w-full h-48 object-cover" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {plants.map((plant) => (
-          <div
-            key={plant._id}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col transform hover:scale-105 transition duration-300
-"
-          >
-            {/* Image */}
-            <img src={plant.image} alt={plant.plantname} className="w-full h-48 object-cover" />
+              {/* Info */}
+              <div className="p-5 space-y-2 flex-grow text-gray-900 dark:text-gray-200">
+                <h2 className="text-xl font-bold text-primary">{plant.plantname}</h2>
+                <p>
+                  <strong>Category:</strong> {plant.category}
+                </p>
+                <p>
+                  <strong>Care Level:</strong> {plant.careLevel}
+                </p>
+                <p>
+                  <strong>Watering:</strong> Every {plant.wateringFrequency} days
+                </p>
+                <p>
+                  <strong>Last Watered:</strong>{" "}
+                  {new Date(plant.lastWatered).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <p>
+                  <strong>Next Watering:</strong>{" "}
+                  {new Date(plant.nextWatering).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+                <p>
+                  <strong>Health Status:</strong> {plant.healthStatus}
+                </p>
+                <p>
+                  <strong>Description:</strong> {plant.description}
+                </p>
+                <p>
+                  <strong>Added By:</strong> {plant.name} ({plant.email})
+                </p>
+              </div>
 
-            {/* Info */}
-            <div className="p-4 space-y-2 flex-grow text-gray-900 dark:text-gray-200">
-              <h2 className="text-xl font-semibold text-primary">{plant.plantname}</h2>
-              <p>
-                <strong>Category:</strong> {plant.category}
-              </p>
-              <p>
-                <strong>Care Level:</strong> {plant.careLevel}
-              </p>
-              <p>
-                <strong>Watering:</strong> Every {plant.wateringFrequency} days
-              </p>
-              <p>
-                <strong>Last Watered:</strong>{" "}
-                {new Date(plant.lastWatered).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              <p>
-                <strong>Next Watering:</strong>{" "}
-                {new Date(plant.nextWatering).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-
-              <p>
-                <strong>Health Status:</strong> {plant.healthStatus}
-              </p>
-              <p>
-                <strong>Description:</strong> {plant.description}
-              </p>
-              <p>
-                <strong>Added By:</strong> {plant.name} ({plant.email})
-              </p>
+              {/* Buttons */}
+              <div className="px-5 py-4 flex justify-between border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                <Link to={`/myplants-update/${plant._id}`} className="px-4 py-2 bg-primary text-white rounded-md hover:bg-green-700 transition">
+                  Update
+                </Link>
+                <button onClick={() => handleDelete(plant._id)} className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
+                  Delete
+                </button>
+              </div>
             </div>
-
-            {/* Buttons */}
-            <div className="p-4 flex  justify-between border-t border-gray-200 dark:border-gray-700">
-              <Link to={`/myplants-update/${plant._id}`} className="px-4 py-2 bg-primary text-white rounded hover:bg-green-800 transition">
-                Update
-              </Link>
-              <button onClick={() => handleDelete(plant._id)} className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
-                Delete
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

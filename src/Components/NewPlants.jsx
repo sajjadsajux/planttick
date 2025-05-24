@@ -26,7 +26,7 @@ const NewPlants = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-20">
             {newPlants.map((plant) => (
-              <div key={plant._id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <div key={plant._id} className=" rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col border border-white">
                 {/* Image */}
                 <div className="overflow-hidden rounded-t-lg">
                   <img src={plant.image} alt={plant.name} className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
@@ -34,17 +34,17 @@ const NewPlants = () => {
 
                 {/* Content */}
                 <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-semibold text-green-800 mb-2 truncate">{plant.plantname}</h3>
-                  <p className="text-gray-700 text-sm mb-1 truncate">
+                  <h3 className="text-2xl font-semibold text-primary mb-2 truncate">{plant.plantname}</h3>
+                  <p className=" text-sm mb-1 truncate">
                     <strong>Category:</strong> {plant.category}
                   </p>
-                  <p className="text-gray-700 text-sm mb-1 truncate">
+                  <p className=" text-sm mb-1 truncate">
                     <strong>Health:</strong> {plant.healthStatus}
                   </p>
-                  <p className="text-gray-700 text-sm mb-1 truncate">
+                  <p className=" text-sm mb-1 truncate">
                     <strong>Care Level:</strong> {plant.careLevel}
                   </p>
-                  <p className="text-gray-700 text-sm mb-4">
+                  <p className=" text-sm mb-4">
                     <strong>Added Date:</strong>{" "}
                     {new Date(plant.addedDate).toLocaleDateString("en-US", {
                       year: "numeric",

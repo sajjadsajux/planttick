@@ -5,10 +5,9 @@ const AllPlantsCard = ({ plants }) => {
   return (
     <div>
       <div className="container mx-auto p-4 min-h-screen">
-        <h2 className="text-2xl font-bold mb-4 text-center">All Plants</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white text-sm text-gray-700 shadow-md rounded-lg">
-            <thead className="bg-green-600 text-white">
+          <table className="min-w-full bg-base-300 text-sm  shadow-md rounded-lg">
+            <thead className="bg-primary text-white">
               <tr>
                 <th className="px-4 py-2 text-left">Image</th>
                 <th className="px-4 py-2 text-left">Plant Name</th>
@@ -20,7 +19,7 @@ const AllPlantsCard = ({ plants }) => {
             </thead>
             <tbody>
               {plants.map((plant) => (
-                <tr key={plant._id} className="border-b hover:bg-gray-50">
+                <tr key={plant._id} className="border-b hover:bg-gray-300">
                   <td className="px-4 py-2">
                     <img src={plant.image} alt={plant.plantname} className="h-12 w-12 object-cover rounded" />
                   </td>
@@ -36,7 +35,7 @@ const AllPlantsCard = ({ plants }) => {
 
                   <td className="px-4 py-2">{plant.healthStatus}</td>
                   <td className="px-4 py-2">
-                    <Link to={`/plant/${plant._id}`} className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 ">
+                    <Link to={`/plant/${plant._id}`} className="bg-primary text-white px-3 py-1 rounded hover:bg-green-700 ">
                       View Details
                     </Link>
                   </td>

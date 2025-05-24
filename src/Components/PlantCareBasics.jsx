@@ -76,20 +76,20 @@ const PlantCareBasics = () => {
       </div>
       <div className="max-w-4xl mx-auto">
         {tips.map((tip, idx) => (
-          <div key={idx} className="collapse collapse-arrow bg-green-50 border border-base-300 rounded-lg mb-5">
+          <div key={idx} className="collapse collapse-arrow bg-base-300 border border-base-300 rounded-lg mb-5">
             <input type="radio" name="plant-care-accordion" defaultChecked={idx === 0} />
-            <div className="collapse-title font-semibold text-lg md:text-xl text-green-700">{tip.title}</div>
-            <div className="collapse-content text-gray-700 dark:text-gray-300">
+            <div className="collapse-title font-semibold text-lg md:text-xl text-primary">{tip.title}</div>
+            <div className="collapse-content ">
               <p className="mb-4 leading-relaxed">{tip.description}</p>
               <ul className="list-disc list-inside mb-4 space-y-1">
                 {tip.summary.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
-              <p className="italic mb-3 text-green-900">
+              <p className="italic mb-3 text-primary">
                 <strong>Tip:</strong> {tip.extraTip}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm ">
                 <strong>Fun Fact:</strong> {tip.funFact}
               </p>
             </div>
