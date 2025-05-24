@@ -61,7 +61,7 @@ const MyPlants = () => {
   };
   SetTitle("My Plants");
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 min-h-[100vh]">
       <h1 className="text-3xl font-bold text-center mb-8  text-primary">My Plants</h1>
       {isLoading ? (
         <Loader></Loader>

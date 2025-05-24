@@ -34,7 +34,7 @@ const AllPlantsCard = ({ plants }) => {
                   </td>
 
                   <td className="px-4 py-2">{plant.healthStatus}</td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 md:px-0 py-2">
                     <Link to={`/plant/${plant._id}`} className="bg-primary text-white px-3 py-1 rounded hover:bg-green-700 ">
                       View Details
                     </Link>

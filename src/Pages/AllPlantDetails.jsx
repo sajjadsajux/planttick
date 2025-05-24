@@ -18,7 +18,6 @@ const AllPlantDetails = () => {
           {/* Plant Info */}
           <div className="flex-1 space-y-5 ">
             <h2 className="text-4xl font-bold text-green-700">{plant.plantname}</h2>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <p>
@@ -29,6 +28,9 @@ const AllPlantDetails = () => {
                 </p>
                 <p>
                   <span className="font-semibold text-green-800">Watering:</span> Every {plant.wateringFrequency} days
+                </p>
+                <p>
+                  <span className="font-semibold text-green-800">Added Date:</span> {new Date(plant.addedDate).toLocaleDateString()}
                 </p>
               </div>
 
@@ -44,12 +46,10 @@ const AllPlantDetails = () => {
                 </p>
               </div>
             </div>
-
             <p className="mt-4  leading-relaxed">
               <span className="font-semibold">Description:</span> {plant.description}
             </p>
-
-            <p className="text-sm  mt-3">Added by {plant.name}</p>
+            <p className="text-sm  mt-3">Added by {plant.name}</p>{" "}
           </div>
         </div>
       </div>
