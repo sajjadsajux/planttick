@@ -47,10 +47,10 @@ const Footer = () => {
             <h3 className="tracking-wide uppercase text-green-200">Company</h3>
             <ul className="space-y-1">
               <li>
-                <NavLink to="/privacy-policy">Privacy Policy</NavLink>
+                <NavLink to="/privacypolicy">Privacy Policy</NavLink>
               </li>
               <li>
-                <NavLink to="/terms">Terms & Condition</NavLink>
+                <NavLink to="/terms-and-conditions">Terms & Conditions</NavLink>
               </li>
             </ul>
           </div>
@@ -62,7 +62,7 @@ const Footer = () => {
               <li>
                 Email:{" "}
                 <a href="mailto:support@planttick.com" className="hover:underline">
-                  support@planttick.com
+                  supportmail@planttick.com
                 </a>
               </li>
               <li>

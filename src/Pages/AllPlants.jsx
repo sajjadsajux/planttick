@@ -24,7 +24,7 @@ const AllPlants = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold my-8 text-center">All Plants</h2>
+      <h2 className="text-3xl font-bold my-8 text-center text-primary">All Plants</h2>
       <div className="flex justify-center mt-4">
         <button onClick={handleSortByNextWatering} className="bg-primary text-white px-4 py-2 rounded hover:bg-secondary">
           Sort by Next Watering ({sortOrder === "asc" ? "Ascending" : "Descending"})

@@ -19,6 +19,8 @@ import ErrorPage from "./Pages/ErrorPage.jsx";
 import MyPlantsUpdate from "./Pages/MyPlantsUpdate.jsx";
 import NewPlantDetails from "./Pages/NewPlantDetails.jsx";
 import { ToastContainer } from "react-toastify";
+import PrivacyPolicy from "./Pages/PrivacyPolicy.jsx";
+import TermsAndConditions from "./Pages/TermsAndConditions.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/privacypolicy",
+        Component: PrivacyPolicy,
+      },
+      {
+        path: "/terms-and-conditions",
+        Component: TermsAndConditions,
       },
       {
         path: "/allplants",

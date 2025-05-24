@@ -62,18 +62,18 @@ const MyPlants = () => {
   SetTitle("My Plants");
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8  dark:text-white">My Plants</h1>
+      <h1 className="text-3xl font-bold text-center mb-8  text-primary">My Plants</h1>
       {isLoading ? (
         <Loader></Loader>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {plants.map((plant) => (
-            <div key={plant._id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-[1.02] transition duration-300 border border-gray-100 dark:border-gray-700">
+            <div key={plant._id} className="bg-base-300  rounded-2xl shadow-lg overflow-hidden flex flex-col transform hover:scale-[1.02] transition duration-300 border border-gray-100 ">
               {/* Image */}
-              <img src={plant.image} alt={plant.plantname} className="w-full h-48 object-cover" />
+              <img src={plant.image} alt={plant.plantname} className="w-full h-64 object-cover" />
 
               {/* Info */}
-              <div className="p-5 space-y-2 flex-grow text-gray-900 dark:text-gray-200">
+              <div className="p-5 space-y-2 flex-grow  ">
                 <h2 className="text-xl font-bold text-primary">{plant.plantname}</h2>
                 <p>
                   <strong>Category:</strong> {plant.category}
@@ -112,7 +112,7 @@ const MyPlants = () => {
               </div>
 
               {/* Buttons */}
-              <div className="px-5 py-4 flex justify-between border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+              <div className="px-5 py-4 flex justify-between border-t border-gray-200  bg-base-300 ">
                 <Link to={`/myplants-update/${plant._id}`} className="px-4 py-2 bg-primary text-white rounded-md hover:bg-green-700 transition">
                   Update
                 </Link>

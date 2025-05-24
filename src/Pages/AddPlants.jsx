@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 import SetTitle from "../Utilities/SetTitle";
+import { Bounce, toast } from "react-toastify";
 
 const AddPlants = () => {
   const { user } = useContext(AuthContext);
@@ -24,13 +25,18 @@ const AddPlants = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Plant Added",
-            showConfirmButton: false,
-            timer: 1500,
+          toast.success("Plant Added Successfully", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
           });
+
           form.reset();
         }
       });
@@ -39,7 +45,7 @@ const AddPlants = () => {
   return (
     <div className="min-h-screen  container mx-auto py-5  flex items-center justify-center px-2">
       <div className="w-full max-w-3xl p-6 bg-base-300  rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-        <h1 className="text-2xl font-bold text-center   mb-6">Add Plants</h1>
+        <h1 className="text-3xl font-bold text-center text-primary   mb-6">Add Plants</h1>
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-4   " onSubmit={handleAddPlants}>
           {/* Plant Name */}
@@ -57,7 +63,7 @@ const AddPlants = () => {
           {/* Category */}
           <div className="space-y-1">
             <label className="block font-medium">Plant Category</label>
-            <select required name="category" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
+            <select required name="category" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-600">
               <option value="">Select a category</option>
               <option value="Succulent">Succulent</option>
               <option value="Fern">Fern</option>
@@ -71,7 +77,7 @@ const AddPlants = () => {
           {/* Care Level */}
           <div className="space-y-1">
             <label className="block font-medium">Care Level</label>
-            <select required name="careLevel" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
+            <select required name="careLevel" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-600">
               <option value="">Select care level</option>
               <option value="Easy">Easy</option>
               <option value="Moderate">Moderate</option>
@@ -106,7 +112,7 @@ const AddPlants = () => {
           {/* Health Status */}
           <div className="space-y-1">
             <label className="block font-medium">Health Status</label>
-            <select required name="healthStatus" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-500">
+            <select required name="healthStatus" className="w-full mt-1 rounded-md border border-gray-300      shadow-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition text-sm text-gray-600">
               <option value="">Select health status</option>
               <option value="Looking Healthy">Looking Healthy</option>
               <option value="Fair">Fair</option>
