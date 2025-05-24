@@ -2,7 +2,7 @@ import React from "react";
 
 const NewPlantCard = ({ plant }) => {
   return (
-    <div className="flex flex-col lg:flex-row bg-base-300  rounded-2xl shadow-md dark:shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300 group max-w-7xl mx-auto border border-gray-200 dark:border-gray-700">
+    <div className="flex  flex-col lg:flex-row bg-base-300  rounded-2xl shadow-md dark:shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300 group max-w-7xl mx-auto border border-gray-200 dark:border-gray-700">
       {/* Image Section */}
       <div className="w-full lg:w-1/2 h-72 lg:h-auto overflow-hidden rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none">
         <img src={plant.image} alt={plant.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -17,9 +17,9 @@ const NewPlantCard = ({ plant }) => {
             <p>
               <span className="font-semibold text-green-600 dark:text-green-300">Owner:</span> {plant.name}
             </p>
-            <p>
+            {/* <p>
               <span className="font-semibold text-green-600 dark:text-green-300">Email:</span> {plant.email}
-            </p>
+            </p> */}
             <p>
               <span className="font-semibold text-green-600 dark:text-green-300">Category:</span> {plant.category}
             </p>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import NewPlantsHeader from "../Animations/NewPlantsHeader";
-
 const NewPlants = () => {
   const [newPlants, setNewPlants] = useState([]);
 
@@ -22,9 +21,12 @@ const NewPlants = () => {
           <p className="text-base  md:text-lg  my-10">Simple tips to help your plants grow healthy and strong. Here are some common practices to get you started</p>
         </div>
         {newPlants.length === 0 ? (
-          <p className="text-center text-gray-500">Add Plants to show here...</p>
+          // <p className="text-center text-gray-500">Add Plants to show here...</p>
+          <div className="flex justify-center items-center">
+            <span className="loading loading-dots loading-xl "></span>
+          </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-20 gap-5">
             {newPlants.map((plant) => (
               <div key={plant._id} className=" rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col border border-white">
                 {/* Image */}
@@ -55,7 +57,7 @@ const NewPlants = () => {
                 </div>
 
                 {/* Button */}
-                <div className="p-5 pt-0 flex justify-center">
+                <div className="p-5 pt-0 flex justify-center ">
                   <Link to={`/newplant/${plant._id}`} className="btn btn-sm bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full w-full max-w-xs text-center">
                     View Details
                   </Link>

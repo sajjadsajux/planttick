@@ -74,29 +74,29 @@ const Register = () => {
   };
 
   return (
-    <div className="md:h-[100vh]    flex items-center justify-center container mx-auto bg-base-300 p-2">
-      <div className="container  mx-auto max-w-md p-8 space-y-3 rounded-xl bg-base-100 text-base-content shadow-md">
+    <div className="md:h-[100vh]    flex items-center justify-center container mx-auto  p-2">
+      <div className="container  mx-auto max-w-md p-8 space-y-3 rounded-xl bg-base-300 text-base-content shadow-md">
         <h1 className="text-2xl font-bold text-center">Register</h1>
         <form className="space-y-6" onSubmit={handleRegister}>
           {/* name */}
           <div className="space-y-1 text-sm">
             <label className="block text-base-content">Name</label>
-            <input required type="text" name="name" placeholder="Name" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-100 text-base-content" />
+            <input required type="text" name="name" placeholder="Name" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-200 text-base-content" />
           </div>
           {/* email */}
           <div className="space-y-1 text-sm">
             <label className="block text-base-content">Email</label>
-            <input required type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-100 text-base-content" />
+            <input required type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-200 text-base-content" />
           </div>
           {/* photourl */}
           <div className="space-y-1 text-sm">
             <label className="block text-base-content">PhotoURL</label>
-            <input required type="url" name="photo" placeholder="PhotoURL" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-100 text-base-content" />
+            <input required type="url" name="photo" placeholder="PhotoURL" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-200 text-base-content" />
           </div>
           {/* password */}
           <div className="space-y-1 text-sm relative">
             <label className="block text-base-content">Password</label>
-            <input required type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-100 text-base-content" />
+            <input required type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border border-base-300 bg-base-200 text-base-content" />
             <span className="absolute right-3 top-10 cursor-pointer text-base-content" onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>

@@ -1,137 +1,117 @@
 import React from "react";
 import CalendarHeader from "../Animations/CalendarHeader";
 
+const months = [
+  {
+    name: "January",
+    color: "bg-lime-50 border-green-500 text-green-700",
+    tasks: [
+      "Check for frost damage on outdoor plants",
+      "Reduce watering for dormant plants",
+      "Clean and sharpen gardening tools",
+      "Start planning your spring garden layout",
+      "Inspect indoor plants for pests",
+      "Begin forcing bulbs indoors",
+      "Order seeds for early crops",
+      "Rotate indoor plants for even light",
+    ],
+  },
+  {
+    name: "February",
+    color: "bg-pink-50 border-rose-400 text-rose-700",
+    tasks: [
+      "Start seeds indoors for early vegetables",
+      "Prune dormant trees and shrubs",
+      "Clean pots and containers for spring",
+      "Continue checking for frost damage",
+      "Fertilize houseplants lightly",
+      "Begin hardening off cold-hardy plants",
+      "Top off mulch to retain soil warmth",
+      "Inspect soil for compaction",
+    ],
+  },
+  {
+    name: "March",
+    color: "bg-green-50 border-emerald-500 text-emerald-700",
+    tasks: ["Fertilize soil with compost or manure", "Prepare garden beds for planting", "Start cool-season crops outdoors", "Prune roses and flowering shrubs", "Divide perennials if needed", "Harden off seedlings gradually", "Watch for early spring weeds", "Adjust watering for warming weather"],
+  },
+  {
+    name: "April",
+    color: "bg-lime-100 border-lime-600 text-lime-700",
+    tasks: ["Plant warm-season vegetables", "Water newly planted flowers and herbs", "Apply mulch to conserve moisture", "Watch for aphids and other pests", "Train climbing plants as they grow", "Deadhead spring blooms", "Support tall-growing plants early", "Add compost to fast-growing plants"],
+  },
+  {
+    name: "May",
+    color: "bg-pink-100 border-pink-500 text-pink-700",
+    tasks: ["Increase watering as temperatures rise", "Plant summer annuals and vegetables", "Pinch back herbs to encourage growth", "Mulch to prevent weed growth", "Stake tomato and pepper plants", "Watch for slugs in shaded areas", "Feed flowering plants", "Thin out seedlings for airflow"],
+  },
+  {
+    name: "June",
+    color: "bg-emerald-50 border-green-600 text-green-700",
+    tasks: ["Deadhead spent flowers regularly", "Harvest herbs before flowering", "Water deeply in the morning", "Check for signs of powdery mildew", "Continue feeding container plants", "Monitor for garden pests", "Mulch fruit trees to retain water", "Train vines and climbing plants"],
+  },
+  {
+    name: "July",
+    color: "bg-yellow-50 border-yellow-500 text-yellow-700",
+    tasks: [
+      "Protect plants from heat stress",
+      "Water early or late to avoid evaporation",
+      "Trim back overgrown shrubs",
+      "Harvest mid-summer vegetables",
+      "Fertilize flowering plants again",
+      "Add shade cloth for sensitive plants",
+      "Weed regularly to reduce competition",
+      "Check irrigation systems for clogs",
+    ],
+  },
+  {
+    name: "August",
+    color: "bg-rose-50 border-rose-600 text-rose-700",
+    tasks: ["Plan fall vegetable garden", "Collect seeds from spent blooms", "Prune lightly to maintain shape", "Deep water fruiting plants", "Replace mulch as needed", "Inspect plants for spider mites", "Cut back herbs for regrowth", "Sow fall flowers like calendula"],
+  },
+  {
+    name: "September",
+    color: "bg-amber-50 border-amber-600 text-amber-700",
+    tasks: ["Plant fall bulbs and garlic", "Start cool-season crops", "Fertilize perennials one last time", "Rake and compost fallen leaves", "Trim dead stems and foliage", "Aerate and amend garden beds", "Divide crowded perennials", "Clean up garden debris"],
+  },
+  {
+    name: "October",
+    color: "bg-orange-50 border-orange-500 text-orange-700",
+    tasks: ["Prepare compost for winter", "Cover sensitive plants before frost", "Clean and store garden tools", "Harvest late-season vegetables", "Add mulch to overwinter beds", "Wrap young trees to prevent cracking", "Plant shrubs and trees", "Protect pots from freezing"],
+  },
+  {
+    name: "November",
+    color: "bg-stone-100 border-stone-500 text-stone-700",
+    tasks: ["Mulch overwintering plants", "Reduce watering for dormancy", "Store hoses and shut off irrigation", "Wrap pots with burlap for insulation", "Clean fallen leaves to avoid disease", "Start indoor herb garden", "Review garden journal", "Protect root crops from frost"],
+  },
+  {
+    name: "December",
+    color: "bg-sky-50 border-sky-600 text-sky-700",
+    tasks: ["Review your gardening successes and fails", "Order seeds and garden supplies", "Care for indoor tropical plants", "Avoid overwatering houseplants", "Check for fungus gnats indoors", "Clean light fixtures near plants", "Prepare garden plan for spring", "Decorate with natural greenery"],
+  },
+];
+
 const PlantCalender = () => {
   return (
-    <div className="container mx-auto px-4 ">
-      <div className="max-w-2xl mx-auto mb-16 text-center">
+    <div className="max-w-4xl mx-auto px-4">
+      {/* Header */}
+      <div className="max-w-2xl mx-auto mb-12 text-center">
         <CalendarHeader />
-        <p className="text-base md:text-lg  my-10">Easy monthly tips to help your plants grow well. Take care of them step by step and enjoy healthy, beautiful plants all year.</p>
+        <p className="text-base md:text-lg my-10 text-center">Easy monthly tips to help your plants grow well. Take care of them step by step and enjoy healthy, beautiful plants all year.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* January */}
-        <div className="bg-lime-50 border-l-4 border-green-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-green-700 mb-2">January</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Check for frost damage</li>
-            <li>Reduce watering</li>
-            <li>Plan spring planting</li>
-          </ul>
-        </div>
-
-        {/* February */}
-        <div className="bg-pink-50 border-l-4 border-rose-400 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-rose-700 mb-2">February</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Prune shrubs</li>
-            <li>Start seeds indoors</li>
-            <li>Clean pots and tools</li>
-          </ul>
-        </div>
-
-        {/* March */}
-        <div className="bg-green-50 border-l-4 border-emerald-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-emerald-700 mb-2">March</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Fertilize soil</li>
-            <li>Prepare garden beds</li>
-            <li>Harden off seedlings</li>
-          </ul>
-        </div>
-
-        {/* April */}
-        <div className="bg-lime-100 border-l-4 border-lime-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-lime-700 mb-2">April</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Plant outdoors</li>
-            <li>Water newly planted</li>
-            <li>Watch for pests</li>
-          </ul>
-        </div>
-
-        {/* May */}
-        <div className="bg-pink-100 border-l-4 border-pink-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-pink-700 mb-2">May</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Mulch garden beds</li>
-            <li>Increase watering</li>
-            <li>Support climbing plants</li>
-          </ul>
-        </div>
-
-        {/* June */}
-        <div className="bg-emerald-50 border-l-4 border-green-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-green-700 mb-2">June</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Deadhead flowers</li>
-            <li>Harvest herbs</li>
-            <li>Water in mornings</li>
-          </ul>
-        </div>
-
-        {/* July */}
-        <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-yellow-700 mb-2">July</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Protect from heat</li>
-            <li>Prune flowering shrubs</li>
-            <li>Check irrigation</li>
-          </ul>
-        </div>
-
-        {/* August */}
-        <div className="bg-rose-50 border-l-4 border-rose-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-rose-700 mb-2">August</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Plan fall garden</li>
-            <li>Collect seeds</li>
-            <li>Water deeply</li>
-          </ul>
-        </div>
-
-        {/* September */}
-        <div className="bg-amber-50 border-l-4 border-amber-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-amber-700 mb-2">September</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Plant bulbs</li>
-            <li>Rake leaves</li>
-            <li>Fertilize perennials</li>
-          </ul>
-        </div>
-
-        {/* October */}
-        <div className="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-orange-700 mb-2">October</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Prepare compost</li>
-            <li>Cover sensitive plants</li>
-            <li>Clean garden tools</li>
-          </ul>
-        </div>
-
-        {/* November */}
-        <div className="bg-stone-100 border-l-4 border-stone-500 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300">
-          <h3 className="text-xl font-semibold text-stone-700 mb-2">November</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Mulch plants</li>
-            <li>Reduce watering</li>
-            <li>Protect pots from frost</li>
-          </ul>
-        </div>
-
-        {/* December */}
-        <div
-          className="bg-sky-50 border-l-4 border-sky-600 p-5 rounded-lg shadow hover:shadow-md transition transform hover:scale-105  duration-300
-"
-        >
-          <h3 className="text-xl font-semibold text-sky-700 mb-2">December</h3>
-          <ul className="list-disc pl-5 text-gray-800 text-sm space-y-1">
-            <li>Review garden plan</li>
-            <li>Order seeds</li>
-            <li>Indoor plant care</li>
-          </ul>
-        </div>
+      {/* Scrollable Calendar */}
+      <div className="h-[500px] md:h-[650px] overflow-y-auto pr-2 space-y-6 text-center">
+        {months.map((month, index) => (
+          <div key={index} className={`p-6 border-l-4 rounded-lg shadow hover:shadow-md transition-transform hover:scale-[1.01] ${month.color}`}>
+            <h3 className="text-xl font-semibold mb-2">{month.name}</h3>
+            <ul className="list-disc pl-5 text-gray-800 text-sm md:text-base space-y-1">
+              {month.tasks.map((task, i) => (
+                <li key={i}>{task}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
