@@ -32,24 +32,24 @@
 
 #### Frontend:
 
-* **React** (v19)  
-* **React Router** (v7)  
-* **Tailwind CSS**  
-* **DaisyUI**  
-* **react-toastify**  
-* **sweetalert2**  
-* **react-tooltip**  
-* **lottie-react**  
-* **swiper**  
-* **react-icons**  
-* **react-spinners**  
-
-#### Backend & Authentication:
-
-* **Node.js**  
-* **Express.js**  
-* **MongoDB**  
+* **react** (^19.1.0)  
+* **react-dom** (^19.1.0)  
+* **react-router** (^7.6.0)  
+* **tailwindcss** (^4.1.7)  
+* **daisyui** (^5.0.35)  
+* **@tailwindcss/vite** (^4.1.7)  
+* **react-toastify** (^11.0.5)  
+* **sweetalert2** (^11.21.2)  
+* **react-tooltip** (^5.28.1)  
+* **lottie-react** (^2.4.1)  
+* **swiper** (^11.2.6)  
+* **react-icons** (^5.5.0)  
+* **react-spinners** (^0.17.0)  
+* **firebase** (^11.7.3)
+  
+#### Authentication:
 * **Firebase Authentication**  
+ 
 
 ---
 
