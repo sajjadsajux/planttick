@@ -7,8 +7,8 @@
 
 ### 🖼️ Screenshot
 
-> *(Add a screenshot of the PlantTick dashboard or plant details page here)*  
-`![PlantTick Screenshot](https://i.ibb.co/mrLLW0FD/Fire-Shot-Capture-012-Home-Track-Care-and-Grow-with-Plant-Tick-planttick-web-app.png)`
+![PlantTick Screenshot](https://i.ibb.co/mrLLW0FD/Fire-Shot-Capture-012-Home-Track-Care-and-Grow-with-Plant-Tick-planttick-web-app.png)
+
 
 ---
 
