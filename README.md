@@ -7,16 +7,13 @@
 
 ### 🖼️ Screenshot
 
-> *(Add a screenshot of the PlantTick dashboard or plant details page here)*  
-`![PlantTick Screenshot](link-to-screenshot.png)`
+![PlantTick Screenshot](https://i.ibb.co/mrLLW0FD/Fire-Shot-Capture-012-Home-Track-Care-and-Grow-with-Plant-Tick-planttick-web-app.png)
+
+
 
 ---
 
-### 🔗 Live Site
 
-* [planttick.web.app](https://planttick.web.app)
-
----
 
 ### 🛠️ Technologies Used
 
@@ -133,6 +130,11 @@ JWT_SECRET=your_jwt_secret_key
 ```bash
 npm run dev
 ```
+
+---
+### 🔗 Live Site
+
+* [planttick.web.app](https://planttick.web.app)
 
 ---
 
