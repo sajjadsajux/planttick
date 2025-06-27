@@ -24,7 +24,7 @@ const DashBoardLayout = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-        <ul className="menu bg-base-300 text-base-content min-h-full w-80 p-4">
+        <ul className="menu bg-base-300 text-base-content min-h-full w-60 p-4">
           {/* Sidebar content here */}
           <li className="flex justify-start items-start">
             <ThemeToggle />
