@@ -3,6 +3,7 @@ import { FaLeaf, FaUserCircle, FaTint, FaCalendarCheck, FaListUl, FaSeedling } f
 import { AuthContext } from "../Contexts/AuthContext";
 import LocalNotes from "../Utilities/LocalNotes";
 import SetTitle from "../Utilities/SetTitle";
+import useScrollToTop from "../Utilities/ScrollToTop";
 const DashboardOverview = () => {
   const { user } = use(AuthContext);
   const [allCount, setAllCount] = useState(0);
@@ -42,6 +43,7 @@ const DashboardOverview = () => {
 
   const greeting = getGreeting();
   SetTitle("Dashboard");
+  useScrollToTop();
 
   return (
     <div className="p-6 min-h-screen bg-base-200">
