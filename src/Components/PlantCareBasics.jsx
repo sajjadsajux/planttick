@@ -69,14 +69,14 @@ const tips = [
 
 const PlantCareBasics = () => {
   return (
-    <section className="container mx-auto p-4 md:p-8">
+    <section className="container mx-auto p-4 lg:p-0 md:p-8">
       <div className="max-w-2xl mx-auto mb-16 text-center ">
         <PlantCareHeader></PlantCareHeader>
         <p className="text-base  md:text-lg  my-10">Simple tips to help your plants grow healthy and strong. Here are some common practices to get you started</p>
       </div>
-      <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto ">
         {tips.map((tip, idx) => (
-          <div key={idx} className="collapse collapse-arrow bg-base-300 border border-base-300 rounded-lg mb-5">
+          <div key={idx} className="collapse collapse-arrow  border border-base-300 rounded-lg mb-5 bg-white dark:bg-base-300 dark:border-white ">
             <input type="radio" name="plant-care-accordion" defaultChecked={idx === 0} />
             <div className="collapse-title font-semibold text-lg md:text-xl text-primary">{tip.title}</div>
             <div className="collapse-content ">

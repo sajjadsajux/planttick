@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeSlider from "../Components/HomeSlider";
 import PlantCareBasics from "../Components/PlantCareBasics";
 import PlantCalender from "../Components/PlantCalender";
@@ -8,6 +8,13 @@ import Newsletter from "./Newsletter";
 
 const Home = () => {
   SetTitle("Home - Track, Care, and Grow with PlantTick");
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <div>
       <section className="w-full ">

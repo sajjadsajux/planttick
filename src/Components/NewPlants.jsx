@@ -26,9 +26,9 @@ const NewPlants = () => {
             <span className="loading loading-dots loading-xl "></span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 lg:gap-20 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-20 gap-5  ">
             {newPlants.map((plant) => (
-              <div key={plant._id} className=" rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col border border-white">
+              <div key={plant._id} className=" rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col border border-white bg-white dark:bg-base-300">
                 {/* Image */}
                 <div className="overflow-hidden rounded-t-lg">
                   <img src={plant.image} alt={plant.name} className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
@@ -37,7 +37,7 @@ const NewPlants = () => {
                 {/* Content */}
                 <div className="p-5 flex flex-col flex-grow">
                   <h3 className="text-2xl font-semibold text-primary mb-2 truncate">{plant.plantname}</h3>
-                  <p className=" text-sm mb-1 truncate">
+                  {/* <p className=" text-sm mb-1 truncate">
                     <strong>Category:</strong> {plant.category}
                   </p>
                   <p className=" text-sm mb-1 truncate">
@@ -53,6 +53,9 @@ const NewPlants = () => {
                       month: "long",
                       day: "numeric",
                     })}
+                  </p> */}
+                  <p className=" text-sm mb-1  line-clamp-2 ">
+                    <strong>Description:</strong> {plant.description}
                   </p>
                 </div>
 

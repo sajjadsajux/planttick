@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
 @plugin "daisyui/theme" {
   name: "light";
-  default: true;
   --color-primary: green;
   --color-secondary: teal;
   --color-base-300: #f0fdf4;
@@ -11,8 +11,10 @@
   name: "dark";
   --color-primary: green;
   --color-secondary: teal;
-  --color-base-300: black;
+  --color-base-300: #1c2229;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .swiper {
   width: 100%;

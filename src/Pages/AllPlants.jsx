@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AllPlantsCard from "./AllPlantsCard";
 import SetTitle from "../Utilities/SetTitle";
+import AllPlantsCardNew from "./AllPlantsCardNew";
 
-const AllPlants = () => {
+const AllPlants = ({ viewType = "card" }) => {
   const loadedPlants = useLoaderData();
   const [plants, setPlants] = useState(loadedPlants);
   const [sortOrder, setSortOrder] = useState("asc"); // default ascending
@@ -30,7 +31,7 @@ const AllPlants = () => {
           Sort by Next Watering ({sortOrder === "asc" ? "Ascending" : "Descending"})
         </button>
       </div>
-      <AllPlantsCard plants={plants} />
+      {viewType === "table" ? <AllPlantsCard plants={plants} /> : <AllPlantsCardNew plants={plants} />}
     </div>
   );
 };

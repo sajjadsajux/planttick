@@ -21,7 +21,7 @@ const Newsletter = () => {
     });
   };
   return (
-    <section className="bg-base-300 py-16 px-8 rounded-lg max-w-6xl mx-auto shadow-lg my-20 ">
+    <section className="bg-white dark:bg-base-300 py-16 px-4 lg:px-20 rounded-lg container mx-auto shadow-lg my-20 dark:border-1 dark:border-white">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
         {/* Left: Lottie Animation */}
         <div className="w-full md:w-2/5 max-w-md mx-auto bg-white rounded-4xl mt-10">

@@ -8,8 +8,8 @@ const AllPlantDetails = () => {
 
   return (
     <div className="py-10 px-4 sm:px-6 lg:px-8  container mx-auto lg:h-[100vh] flex items-center justify-center ">
-      <div className="max-w-6xl mx-auto bg-base-300 backdrop-blur-md border border-green-200 rounded-3xl shadow-2xl p-8 transition duration-300 hover:shadow-green-200 transform hover:scale-105">
-        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-base-300 backdrop-blur-md border border-green-200 rounded-3xl shadow-2xl p-8 transition duration-300 hover:shadow-green-200 transform hover:scale-105  ">
+        <div className="flex flex-col md:flex-row gap-8 items-center md:items-start ">
           {/* Plant Image */}
           <div className="w-full md:w-80 flex-shrink-0">
             <img src={plant.image} alt={plant.plantname} className="w-full h-80 object-cover rounded-2xl shadow-lg border-4 border-green-300" />

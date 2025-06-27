@@ -6,8 +6,8 @@ import Home from "../Pages/Home";
 
 const MainLayout = () => {
   return (
-    <div>
-      <header className="container mx-auto">
+    <div className="bg-base-300 ">
+      <header className=" sticky top-0 z-50">
         <Navbar></Navbar>
       </header>
       <Outlet></Outlet>

@@ -29,7 +29,7 @@ const HomeSlider = () => {
         <SwiperSlide>
           <div className="relative">
             {/* Background Image */}
-            <img src="https://i.ibb.co/7dMdGFKP/slider4.jpg" className="h-[60vh] md:h-[70vh] lg:h-[85vh] w-full object-cover" alt="" />
+            <img src="https://i.ibb.co/7dMdGFKP/slider4.jpg" className="h-[50vh] md:h-[60vh] lg:h-[65vh] w-full object-cover" alt="" />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
@@ -48,7 +48,7 @@ const HomeSlider = () => {
         <SwiperSlide>
           <div className="relative">
             {/* Background Image */}
-            <img src="https://i.ibb.co/9mF0mRqx/slider3.webp" className="h-[60vh] md:h-[70vh] lg:h-[85vh] w-full object-cover" alt="" />
+            <img src="https://i.ibb.co/9mF0mRqx/slider3.webp" className="h-[50vh] md:h-[60vh] lg:h-[65vh] w-full object-cover" alt="" />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
@@ -67,7 +67,7 @@ const HomeSlider = () => {
         <SwiperSlide>
           <div className="relative">
             {/* Background Image */}
-            <img src="https://i.ibb.co/G376Q8j4/slider1.png" className="h-[60vh] md:h-[70vh] lg:h-[85vh] w-full object-cover" alt="" />
+            <img src="https://i.ibb.co/G376Q8j4/slider1.png" className="h-[50vh] md:h-[60vh] lg:h-[65vh] w-full object-cover" alt="" />
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>

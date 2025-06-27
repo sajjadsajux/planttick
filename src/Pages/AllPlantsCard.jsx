@@ -6,7 +6,7 @@ const AllPlantsCard = ({ plants }) => {
     <div>
       <div className="container mx-auto p-4 min-h-screen">
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-base-300 text-sm  shadow-md rounded-lg">
+          <table className="min-w-full  bg-white dark:bg-base-300 text-sm  shadow-md rounded-lg">
             <thead className="bg-primary text-white">
               <tr>
                 <th className="px-4 py-2 text-left">Image</th>

@@ -60,27 +60,28 @@ const MyPlantsUpdate = () => {
   SetTitle(`Update Plant - ${plantname}`);
   return (
     <div>
-      <div className=" p-10 container mx-auto">
-        <div className="w-full max-w-4xl p-8 space-y-6 rounded-xl bg-base-300  mx-auto">
-          <h1 className="text-2xl font-bold text-center  ">Update Plant</h1>
+      <div className="p-10 container mx-auto">
+        <h1 className="text-3xl font-bold text-center text-primary mb-8">Update Plant</h1>
+
+        <div className="w-full max-w-4xl p-8 space-y-6 rounded-xl bg-white dark:bg-base-300 border dark:border-gray-600 mx-auto">
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleUpdate}>
             {/* Plant Name */}
             <div className="space-y-1 text-sm">
-              <label className="block  dark:text-gray-200">Plant Name</label>
-              <input required type="text" name="plantname" placeholder="Plant Name" defaultValue={plantname} className="w-full px-4 py-3 rounded-md outline-1  dark:bg-gray-700  dark:text-gray-100" />
+              <label className="block text-gray-700 dark:text-gray-200">Plant Name</label>
+              <input required type="text" name="plantname" placeholder="Plant Name" defaultValue={plantname} className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
+
             {/* Image */}
             <div className="space-y-1 text-sm">
-              <label className="block  dark:text-gray-200">Image</label>
-              <input required type="url" name="image" placeholder="ImageURL" defaultValue={image} className="w-full px-4 py-3 rounded-md outline-1  dark:bg-gray-700  dark:text-gray-100" />
+              <label className="block text-gray-700 dark:text-gray-200">Image</label>
+              <input required type="url" name="image" placeholder="ImageURL" defaultValue={image} className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
+
             {/* Category */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="category" className="block text-sm font-medium  dark:text-gray-200">
-                Plant Category
-              </label>
-              <select required name="category" defaultValue={category} className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600   shadow-sm text-gray-700">
-                <option value="">Select a category from below</option>
+              <label className="block text-gray-700 dark:text-gray-200">Plant Category</label>
+              <select required name="category" defaultValue={category} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+                <option value="">Select a category</option>
                 <option value="Succulent">Succulent</option>
                 <option value="Fern">Fern</option>
                 <option value="Flowering">Flowering</option>
@@ -92,11 +93,9 @@ const MyPlantsUpdate = () => {
 
             {/* Care Level */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="careLevel" className="block text-sm font-medium  ">
-                Care Level
-              </label>
-              <select required name="careLevel" defaultValue={careLevel} className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600  text-gray-700 shadow-sm">
-                <option value="">Select a care level from below</option>
+              <label className="block text-gray-700 dark:text-gray-200">Care Level</label>
+              <select required name="careLevel" defaultValue={careLevel} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+                <option value="">Select care level</option>
                 <option value="Easy">Easy</option>
                 <option value="Moderate">Moderate</option>
                 <option value="Difficult">Difficult</option>
@@ -105,35 +104,27 @@ const MyPlantsUpdate = () => {
 
             {/* Watering Frequency */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="wateringFrequency" className="block text-sm font-medium  dark:text-gray-200">
-                Watering Frequency (in days)
-              </label>
-              <input required type="number" name="wateringFrequency" placeholder="e.g., 3" min="1" defaultValue={wateringFrequency} className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 text-gray-700 shadow-sm" />
+              <label className="block text-gray-700 dark:text-gray-200">Watering Frequency (in days)</label>
+              <input required type="number" name="wateringFrequency" min="1" placeholder="e.g., 3" defaultValue={wateringFrequency} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
 
-            {/* Last Watered Date */}
+            {/* Last Watered */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="lastWatered" className="block text-sm font-medium  dark:text-gray-200">
-                Last Watered Date
-              </label>
-              <input required type="date" id="lastWatered" name="lastWatered" defaultValue={formattedLastDate} className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600   text-gray-700 shadow-sm" />
+              <label className="block text-gray-700 dark:text-gray-200">Last Watered Date</label>
+              <input required type="date" name="lastWatered" defaultValue={formattedLastDate} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
 
-            {/* Next Watering Date */}
+            {/* Next Watering */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="nextWatering" className="block text-sm font-medium  dark:text-gray-200">
-                Next Watering Date
-              </label>
-              <input required type="date" name="nextWatering" defaultValue={formattedNextDate} className="mt-1 block w-full rounded-md border border-gray-300  text-gray-700 shadow-sm" />
+              <label className="block text-gray-700 dark:text-gray-200">Next Watering Date</label>
+              <input required type="date" name="nextWatering" defaultValue={formattedNextDate} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
 
             {/* Health Status */}
             <div className="space-y-1 text-sm">
-              <label htmlFor="healthStatus" className="block text-sm font-medium  dark:text-gray-200">
-                Health Status
-              </label>
-              <select required name="healthStatus" defaultValue={healthStatus} className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 text-gray-700 shadow-sm">
-                <option value="">Select health status from below</option>
+              <label className="block text-gray-700 dark:text-gray-200">Health Status</label>
+              <select required name="healthStatus" defaultValue={healthStatus} className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
+                <option value="">Select health status</option>
                 <option value="Looking Healthy">Looking Healthy</option>
                 <option value="Fair">Fair</option>
                 <option value="Leaves Drying">Leaves Drying</option>
@@ -142,13 +133,13 @@ const MyPlantsUpdate = () => {
               </select>
             </div>
 
-            {/* Description - Full Width */}
+            {/* Description */}
             <div className="space-y-1 text-sm md:col-span-2">
-              <label className="block  dark:text-gray-200">Description</label>
-              <input required type="text" name="description" placeholder="Description" defaultValue={description} className="w-full px-4 py-3 rounded-md border border-gray-700 dark:border-gray-400  dark:bg-gray-700  dark:text-gray-100 outline-1" />
+              <label className="block text-gray-700 dark:text-gray-200">Description</label>
+              <input required type="text" name="description" placeholder="Description" defaultValue={description} className="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
             </div>
 
-            {/* Submit Button - Full Width */}
+            {/* Submit */}
             <div className="md:col-span-2">
               <button type="submit" className="block w-full p-3 text-center rounded-sm text-white bg-primary hover:bg-primary-dark transition">
                 Update

@@ -21,6 +21,11 @@ import NewPlantDetails from "./Pages/NewPlantDetails.jsx";
 import { ToastContainer } from "react-toastify";
 import PrivacyPolicy from "./Pages/PrivacyPolicy.jsx";
 import TermsAndConditions from "./Pages/TermsAndConditions.jsx";
+import AboutUs from "./Pages/AboutUs.jsx";
+import ContactUs from "./Pages/ContactUs.jsx";
+import DashBoardLayout from "./Layouts/DashBoardLayout.jsx";
+import MyPlantsNew from "./Pages/MyPlantsNew.jsx";
+import DashboardOverview from "./Pages/DashboardOverview.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         Component: Login,
+      },
+      {
+        path: "/about-us",
+        Component: AboutUs,
+      },
+      {
+        path: "/contact-us",
+        Component: ContactUs,
       },
       {
         path: "/register",
@@ -51,7 +64,7 @@ const router = createBrowserRouter([
         loader: () => fetch("https://planttick-server.vercel.app/plants"),
         hydrateFallbackElement: <Loader></Loader>,
 
-        Component: AllPlants,
+        element: <AllPlants viewType="card"></AllPlants>,
       },
       {
         path: "/plant/:id",
@@ -99,6 +112,35 @@ const router = createBrowserRouter([
             <NewPlantDetails></NewPlantDetails>
           </PrivateRoute>
         ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashBoardLayout></DashBoardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <DashboardOverview />,
+      },
+
+      {
+        path: "allplants",
+        loader: () => fetch("https://planttick-server.vercel.app/plants"),
+        hydrateFallbackElement: <Loader></Loader>,
+        element: <AllPlants viewType="table"></AllPlants>,
+      },
+      {
+        path: "addplants",
+        Component: AddPlants,
+      },
+      {
+        path: "myplants",
+        Component: MyPlantsNew,
       },
     ],
   },

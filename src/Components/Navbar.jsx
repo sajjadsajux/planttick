@@ -1,12 +1,28 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Tooltip } from "react-tooltip";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { Bounce, toast } from "react-toastify";
+import ThemeToggle from "../Utilities/ThemeToggle";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
 
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
   const handleLogOut = () => {
     signOutUser()
       .then(() => {
@@ -36,6 +52,12 @@ const Navbar = () => {
       <li>
         <NavLink to="/allplants">All Plants</NavLink>
       </li>
+      <li>
+        <NavLink to="/about-us">About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact-us">Contact Us</NavLink>
+      </li>
       {user && (
         <>
           <li>
@@ -44,6 +66,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/myplants">My Plants</NavLink>
           </li>
+          <li>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
         </>
       )}
     </>
@@ -51,7 +76,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 ">
+      <div className="navbar   dark:bg-base-300 glass  px-4 sm:px-6 lg:px-8  border-0 shadow-none">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden pl-0 pr-2">
@@ -63,9 +88,17 @@ const Navbar = () => {
               {linksNav}
             </ul>
           </div>
-          <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold ">
-            Plant<span className="text-primary">Tick</span>
-          </h3>
+          <Link to="/">
+            <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold ">
+              Plant<span className="text-primary">Tick</span>
+            </h3>
+          </Link>
+          {/* <Link to="/">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
+              <span className="inline-block bg-white text-primary px-3 py-1 rounded-2xl">Plant</span>
+              <span className="text-white ml-2">Tick</span>
+            </h3>
+          </Link> */}
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{linksNav}</ul>
@@ -90,29 +123,7 @@ const Navbar = () => {
             </div>
           )}
           <div className="ml-[2px] md:ml-1">
-            <label className="toggle text-base-content">
-              <input type="checkbox" value="dark" className="theme-controller" />
-
-              <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <path d="M12 2v2"></path>
-                  <path d="M12 20v2"></path>
-                  <path d="m4.93 4.93 1.41 1.41"></path>
-                  <path d="m17.66 17.66 1.41 1.41"></path>
-                  <path d="M2 12h2"></path>
-                  <path d="M20 12h2"></path>
-                  <path d="m6.34 17.66-1.41 1.41"></path>
-                  <path d="m19.07 4.93-1.41 1.41"></path>
-                </g>
-              </svg>
-
-              <svg aria-label="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor">
-                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-                </g>
-              </svg>
-            </label>
+            <ThemeToggle></ThemeToggle>
           </div>
         </div>
       </div>

@@ -2,19 +2,21 @@ import React, { use } from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AuthContext } from "../Contexts/AuthContext";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Footer = () => {
   const { user } = use(AuthContext);
   return (
-    <footer className="bg-primary text-primary-content px-4 sm:px-6 lg:px-8 divide-y">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between py-10 gap-10">
+    <footer className="bg-primary dark:bg-gray-900 dark:glass  text-primary-content px-4 sm:px-6 lg:px-8 divide-y">
+      <div className=" flex flex-col lg:flex-row justify-between py-10 gap-10">
         {/* Logo Section */}
         <div className="flex justify-center lg:justify-start items-center">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
-            <span className="inline-block bg-white text-primary px-3 py-1 rounded-2xl">Plant</span>
-            <span className="text-white ml-2">Tick</span>
-          </h3>
+          <Link to="/">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
+              <span className="inline-block bg-white text-primary px-3 py-1 rounded-2xl">Plant</span>
+              <span className="text-white ml-2">Tick</span>
+            </h3>
+          </Link>
         </div>
 
         {/* Links Section */}
@@ -93,7 +95,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="py-6 text-center text-green-300 text-sm">© 2025 PlantTick Team. All rights reserved.</div>
+      <div className="py-6 text-center text-green-300 text-sm">© 2025 PlantTick All rights reserved.</div>
     </footer>
   );
 };
