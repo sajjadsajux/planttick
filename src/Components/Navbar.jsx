@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router";
@@ -62,7 +62,7 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <NavLink to="/addplants">Add Plant</NavLink>
+            <NavLink to="/addplants">Add Plants</NavLink>
           </li>
           <li>
             <NavLink to="/myplants">My Plants</NavLink>

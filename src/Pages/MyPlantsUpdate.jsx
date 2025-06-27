@@ -3,6 +3,7 @@ import { useLoaderData, useLocation, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import SetTitle from "../Utilities/SetTitle";
+import useScrollToTop from "../Utilities/ScrollToTop";
 
 const MyPlantsUpdate = () => {
   const myplant = useLoaderData();
@@ -62,6 +63,8 @@ const MyPlantsUpdate = () => {
       });
   };
   SetTitle(`Update Plant - ${plantname}`);
+  useScrollToTop();
+
   return (
     <div>
       <div className="p-10 container mx-auto">

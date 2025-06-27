@@ -60,7 +60,7 @@ const NewPlants = () => {
                 </div>
 
                 {/* Button */}
-                <div className="p-5 pt-0 flex justify-center ">
+                <div className="md:p-5 pt-0 flex justify-center ">
                   <Link to={`/newplant/${plant._id}`} className="btn btn-sm bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full w-full max-w-xs text-center">
                     View Details
                   </Link>

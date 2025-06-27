@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import AllPlantsCard from "./AllPlantsCard";
 import SetTitle from "../Utilities/SetTitle";
 import AllPlantsCardNew from "./AllPlantsCardNew";
+import useScrollToTop from "../Utilities/ScrollToTop";
 
 const AllPlants = ({ viewType = "card" }) => {
   const loadedPlants = useLoaderData();
@@ -22,6 +23,7 @@ const AllPlants = ({ viewType = "card" }) => {
     setPlants(sortedPlants);
     setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
   };
+  useScrollToTop();
 
   return (
     <div>

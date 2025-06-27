@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
   useScrollToTop();
 
   return (
-    <div className="max-w-4xl mx-auto p-6 ">
+    <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-base-300">
       <h1 className="text-3xl font-bold mb-6 text-center">Terms & Conditions</h1>
 
       <p className="mb-4">By using our website, you agree to the following terms and conditions. Please read them carefully.</p>

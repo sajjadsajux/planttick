@@ -1,11 +1,13 @@
 import React from "react";
+import useScrollToTop from "../Utilities/ScrollToTop";
 
 const AboutUs = () => {
-  return (
-    <div className="min-h-screen py-16 px-6 md:px-12 ">
-      <div className="max-w-4xl mx-auto bg-white dark:bg-base-300 p-10 rounded-xl shadow-md">
-        <h1 className="text-3xl font-bold text-center mb-8 text-primary">About Us</h1>
+  useScrollToTop();
 
+  return (
+    <div className="min-h-screen  px-6 md:px-12 ">
+      <h1 className="text-3xl font-bold my-8 text-center text-primary">About Us</h1>
+      <div className="max-w-4xl mx-auto bg-white dark:bg-base-300 p-10 rounded-xl shadow-md">
         <p className="text-lg mb-6 leading-relaxed text-gray-700 dark:text-gray-200">
           Welcome to <span className="font-semibold">PlantTick</span> – your green companion in tracking, caring, and growing your beloved plants. We’re a passionate team of nature lovers and tech enthusiasts who believe that every plant deserves timely care and attention.
         </p>

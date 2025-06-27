@@ -2,6 +2,7 @@ import { use, useEffect, useState } from "react";
 import { FaLeaf, FaUserCircle, FaTint, FaCalendarCheck, FaListUl, FaSeedling } from "react-icons/fa";
 import { AuthContext } from "../Contexts/AuthContext";
 import LocalNotes from "../Utilities/LocalNotes";
+import SetTitle from "../Utilities/SetTitle";
 const DashboardOverview = () => {
   const { user } = use(AuthContext);
   const [allCount, setAllCount] = useState(0);
@@ -40,6 +41,7 @@ const DashboardOverview = () => {
   };
 
   const greeting = getGreeting();
+  SetTitle("Dashboard");
 
   return (
     <div className="p-6 min-h-screen bg-base-200">

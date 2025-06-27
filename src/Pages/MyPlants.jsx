@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { Bounce, toast } from "react-toastify";
 import SetTitle from "../Utilities/SetTitle";
 import Loader from "../Utilities/Loader";
+import useScrollToTop from "../Utilities/ScrollToTop";
 
 const MyPlants = () => {
   const { user } = use(AuthContext);
@@ -60,6 +61,8 @@ const MyPlants = () => {
     });
   };
   SetTitle("My Plants");
+  useScrollToTop();
+
   return (
     <div className="container mx-auto p-6 lg:p-0 min-h-[100vh]">
       <h1 className="text-3xl font-bold text-center mb-8  text-primary mt-8">My Plants</h1>
