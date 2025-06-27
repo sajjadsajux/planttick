@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 import { Bounce, toast } from "react-toastify";
@@ -11,6 +11,8 @@ const MyPlantsNew = () => {
   const { _id } = user;
   const [plants, setPlants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
     setIsLoading(true);
     if (user?.email) {
@@ -105,13 +107,15 @@ const MyPlantsNew = () => {
                       <br />
                       <span className="text-xs text-gray-500">{plant.email}</span>
                     </td>
-                    <td className="px-4 py-2 space-x-2">
-                      <Link to={`/myplants-update/${plant._id}`} className="bg-primary text-white px-3 py-1 rounded hover:bg-green-700 transition ">
-                        Update
-                      </Link>
-                      <button onClick={() => handleDelete(plant._id)} className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition ">
-                        Delete
-                      </button>
+                    <td className="px-4 py-2">
+                      <div className="join join-vertical w-full">
+                        <Link to={`/myplants-update/${plant._id}`} className="btn join-item bg-primary text-white hover:bg-green-700 transition" state={{ from: location.pathname }}>
+                          Update
+                        </Link>
+                        <button onClick={() => handleDelete(plant._id)} className="btn join-item bg-red-500 text-white hover:bg-red-600 transition">
+                          Delete
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

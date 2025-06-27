@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Link, NavLink } from "react-router";
+import UseLogoNew from "../Utilities/UseLogoNew";
 
 const Footer = () => {
   const { user } = use(AuthContext);
@@ -12,10 +13,7 @@ const Footer = () => {
         {/* Logo Section */}
         <div className="flex justify-center lg:justify-start items-center">
           <Link to="/">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
-              <span className="inline-block bg-white text-primary px-3 py-1 rounded-2xl">Plant</span>
-              <span className="text-white ml-2">Tick</span>
-            </h3>
+            <UseLogoNew className="w-26  md:w-44"></UseLogoNew>
           </Link>
         </div>
 

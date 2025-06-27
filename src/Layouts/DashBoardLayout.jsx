@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
 import ThemeToggle from "../Utilities/ThemeToggle";
+import UseLogo from "../Utilities/useLogo";
 
 const DashBoardLayout = () => {
   return (
@@ -26,12 +27,14 @@ const DashBoardLayout = () => {
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
         <ul className="menu bg-base-300 text-base-content min-h-full w-60 p-4">
           {/* Sidebar content here */}
-          <li className="flex justify-start items-start">
+          <li className="flex flex-row items-center gap-4">
+            <UseLogo className="w-24 md:w-30"></UseLogo>
             <ThemeToggle />
           </li>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+
           <li>
             <NavLink to="/dashboard/allplants">All Plants</NavLink>
           </li>

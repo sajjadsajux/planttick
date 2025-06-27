@@ -51,12 +51,15 @@ const DashboardOverview = () => {
       </div>
 
       {/* Logged-in User Profile */}
-      <div className="flex flex-col items-center justify-center bg-base-200 dark:bg-base-300 p-6 rounded-xl shadow mb-10 w-full max-w-md mx-auto">
+      <div
+        className="flex flex-col items-center justify-center bg-base-300 dark:bg-base-300 p-6 rounded-xl shadow mb-10 w-full max-w-md mx-auto transform transition-all duration-300 hover:shadow-lg hover:scale-105 border dark:border-white
+"
+      >
         <img src={user.photoURL || "https://i.ibb.co/5rC6w8P/user.png"} alt="User" className="w-24 h-24 rounded-full border-2 border-primary object-cover mb-4" />
         <h2 className="text-2xl font-bold text-primary text-center">{user.displayName}</h2>
         <p className="text-sm text-gray-600 dark:text-gray-300 text-center break-words">{user.email}</p>
       </div>
-      <div>
+      <div className="">
         <LocalNotes></LocalNotes>
       </div>
 

@@ -4,25 +4,26 @@ import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router";
 import { Bounce, toast } from "react-toastify";
 import ThemeToggle from "../Utilities/ThemeToggle";
+import UseLogo from "../Utilities/useLogo";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+  // const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem("theme", theme);
+  //   const localTheme = localStorage.getItem("theme");
+  //   document.querySelector("html").setAttribute("data-theme", localTheme);
+  // }, [theme]);
 
-  const handleToggle = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  // const handleToggle = (e) => {
+  //   if (e.target.checked) {
+  //     setTheme("dark");
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // };
   const handleLogOut = () => {
     signOutUser()
       .then(() => {
@@ -89,9 +90,10 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold ">
+            {/* <h3 className="text-xl pl-0 md:text-2xl lg:text-3xl font-bold ">
               Plant<span className="text-primary">Tick</span>
-            </h3>
+            </h3> */}
+            <UseLogo className="w-26  md:w-44"></UseLogo>
           </Link>
           {/* <Link to="/">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">

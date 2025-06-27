@@ -6,7 +6,7 @@ const ErrorHeader = () => {
   return (
     <div className="text-center mb-6">
       <div className="flex flex-col items-center justify-center">
-        <Lottie animationData={errorAnim} loop={true} style={{ height: 200 }} />
+        <Lottie animationData={errorAnim} loop={true} style={{ height: 400 }} />
       </div>
     </div>
   );

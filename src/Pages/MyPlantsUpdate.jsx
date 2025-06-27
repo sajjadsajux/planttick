@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useLocation, useNavigate } from "react-router";
 import { Bounce, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import SetTitle from "../Utilities/SetTitle";
@@ -10,6 +10,9 @@ const MyPlantsUpdate = () => {
   const { _id, plantname, category, careLevel, description, healthStatus, image, lastWatered, nextWatering, wateringFrequency } = myplant;
   const formattedLastDate = new Date(lastWatered).toISOString().split("T")[0];
   const formattedNextDate = new Date(nextWatering).toISOString().split("T")[0];
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || "/myplants"; // fallback route
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -42,6 +45,7 @@ const MyPlantsUpdate = () => {
             theme: "light",
             transition: Bounce,
           });
+          navigate(from);
         } else if (data.modifiedCount === 0) {
           toast.warn("Everything is Up to Date!", {
             position: "top-right",

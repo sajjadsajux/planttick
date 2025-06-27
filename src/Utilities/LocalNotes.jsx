@@ -18,8 +18,11 @@ const LocalNotes = () => {
   };
 
   return (
-    <div className="my-4 p-4 bg-base-200 dark:bg-base-300 rounded-lg shadow max-w-md mx-auto">
-      <h3 className="text-lg font-semibold mb-2 text-primary text-center">📝 Plant Notes</h3>
+    <div
+      className="my-4 p-4 bg-base-200 dark:bg-base-300 rounded-lg shadow max-w-md mx-auto transform transition-all duration-300 hover:shadow-lg hover:scale-105 border dark:border-white
+"
+    >
+      <h3 className="text-lg font-semibold mb-2 text-primary text-center">Plant Notes</h3>
 
       {savedNote && (
         <div className="bg-white dark:bg-base-100 p-2 rounded text-xs mb-3 border">

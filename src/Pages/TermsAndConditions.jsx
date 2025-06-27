@@ -1,8 +1,10 @@
 import React from "react";
 import SetTitle from "../Utilities/SetTitle";
+import useScrollToTop from "../Utilities/ScrollToTop";
 
 const TermsAndConditions = () => {
   SetTitle("Terms And Conditions");
+  useScrollToTop();
 
   return (
     <div className="max-w-4xl mx-auto p-6 ">
